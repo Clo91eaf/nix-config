@@ -9,7 +9,7 @@
   Copied the configuration from keyd, which is very user-friendly.
 
 - **[Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)**  
-  I've read parts of it, but this configuration doesn't use `home-manager` for managing dotfiles, so it feels somewhat outdated.
+  I've read parts of it, it is nice for beginner to follow the configuration.
 
 ## 📚 Learning Resources and Documentation
 
@@ -39,3 +39,6 @@
 
 - **Home Manager Configuration Options**:  
   [Home Manager Options](https://nix-community.github.io/home-manager/options.xhtml)
+
+- **Home Manager Packages**:
+  [MyNixOS](https://mynixos.com/packages)
