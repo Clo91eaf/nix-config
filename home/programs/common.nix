@@ -56,8 +56,8 @@
           decorations = "Full";
           opacity = 0.9;
         };
-        font. normal = {
-          family = "FiraCode";
+        font.normal = {
+          family = "FiraCode Nerd Font";
           style = "Regular";
         };
       };
