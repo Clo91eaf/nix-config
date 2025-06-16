@@ -92,6 +92,9 @@
     btop.enable = true; # replacement of htop/nmon
     eza.enable = true; # A modern replacement for ‘ls’
     jq.enable = true; # A lightweight and flexible command-line JSON processor
-    ssh.enable = true; # ssh
+    ssh = {
+      enable = true; # ssh
+      extraConfig = "Host 172.24.5.184\nHostName 172.24.5.184\nUser clo91eaf";
+    };
   };
 }
