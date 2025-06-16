@@ -89,8 +89,8 @@
       noto-fonts-emoji
 
       # program fonts
-      fira-code
-      fira-code-symbols
+      nerd-fonts.fira-code
+      nerd-fonts.symbols-only
     ];
 
     # use fonts specified by user rather than default ones
