@@ -1,7 +1,7 @@
 {
   imports = [
     # ./browsers.nix
-    # ./common.nix
+    ./common.nix
     ./git.nix
   ];
 }

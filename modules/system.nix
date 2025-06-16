@@ -109,37 +109,11 @@
 
   networking.firewall.enable = false;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    curl
-    git
-    fastfetch
-    openvpn
-    alacritty
-    firefox
-    clash-verge-rev
-    direnv
-    telegram-desktop
-		(vscode-with-extensions.override {
-			vscodeExtensions = with vscode-extensions; [
-				sdras.night-owl
-				bbenoist.nix
-				vscodevim.vim
-				mkhl.direnv
-        github.copilot
-        github.copilot-chat
-				ms-vscode-remote.remote-ssh
-				ms-vscode-remote.remote-ssh-edit
-			];
-		})
-  ];
-
   environment.variables = {
     # set the default editor to vim
     EDITOR = "vim";
     VISUAL = "vim";
-  }
+  };
 
   services = {
     xserver.enable = true;
