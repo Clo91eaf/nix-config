@@ -135,6 +135,12 @@
 		})
   ];
 
+  environment.variables = {
+    # set the default editor to vim
+    EDITOR = "vim";
+    VISUAL = "vim";
+  }
+
   services = {
     xserver.enable = true;
 
