@@ -148,4 +148,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  # vpn
+  services.mihomo.tunMode = true;
+  programs.clash-verge.enable = true;
 }

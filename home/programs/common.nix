@@ -30,6 +30,7 @@
         sdras.night-owl
         bbenoist.nix
         vscodevim.vim
+        vspacecode.whichkey
         mkhl.direnv
         github.copilot
         github.copilot-chat
@@ -40,9 +41,6 @@
 
     # Browser
     firefox
-
-    # Network
-    clash-verge-rev
 
     # Communication
     telegram-desktop
