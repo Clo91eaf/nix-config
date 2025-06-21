@@ -21,9 +21,12 @@
 
     # shells
     fastfetch
-    openvpn
 
-    # Editor
+    # connects
+    openvpn
+    tigervnc
+
+    # editor
     vim
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
@@ -39,10 +42,10 @@
       ];
     })
 
-    # Browser
+    # browser
     firefox
 
-    # Communication
+    # communication
     telegram-desktop
   ];
 
