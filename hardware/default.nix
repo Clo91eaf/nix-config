@@ -15,9 +15,15 @@
 
   # Bootloader.
   boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    # efi.efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot"; 
+    };
+    grub = {
+      efiSupport = true;
+      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+      device = "nodev";
+    };
   };
 
   # networking.hostName = "Clo91eaf's NixOS"; # Define your hostname.
