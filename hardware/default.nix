@@ -20,9 +20,26 @@
       efiSysMountPoint = "/boot"; 
     };
     grub = {
+      enable = true;
       efiSupport = true;
-      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
       device = "nodev";
+      extraEntries = ''
+        menuentry "Windows" {
+          search --label --no-floppy --set=root ESP_EFI
+          chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
+        }
+      '';
+      theme = pkgs.stdenv.mkDerivation {
+        pname = "grub-theme";
+        version = "1.0.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "grub";
+          rev = "v1.0.0";
+          hash = "sha256-/bSolCta8GCZ4lP0u5NVqYQ9Y3ZooYCNdTwORNvR7M0=";
+        };
+        installPhase = "cp -r src/catppuccin-mocha-grub-theme $out";
+      };
     };
   };
 
