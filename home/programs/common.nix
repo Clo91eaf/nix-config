@@ -31,7 +31,7 @@
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         sdras.night-owl
-        bbenoist.nix
+        jnoortheen.nix-ide
         vscodevim.vim
         vspacecode.whichkey
         mkhl.direnv
