@@ -1,10 +1,8 @@
-{
-  lib,
-  pkgs,
-  catppuccin-bat,
-  ...
-}: {
+{ lib, pkgs, catppuccin-bat, ... }: {
   home.packages = with pkgs; [
+    # nix
+    nixfmt-classic
+
     # fetch
     wget
     curl
@@ -95,7 +93,10 @@
     jq.enable = true; # A lightweight and flexible command-line JSON processor
     ssh = {
       enable = true; # ssh
-      extraConfig = "Host 172.24.5.184\nHostName 172.24.5.184\nUser clo91eaf";
+      extraConfig = ''
+        Host 172.24.5.184
+        HostName 172.24.5.184
+        User clo91eaf'';
     };
   };
 }
