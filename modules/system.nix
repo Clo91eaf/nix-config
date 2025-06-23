@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  username,
-  ...
-}: {
+{ pkgs, lib, username, ... }: {
   # ============================= User related =============================
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -12,14 +7,14 @@
     home = "/home/Clo91eaf";
     password = "a";
     description = username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
   };
   users.mutableUsers = false;
 
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
     # enable flakes globally
-    experimental-features = ["nix-command" "flakes" "pipe-operators"];
+    experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
 
     substituters = [
       # cache mirror located in China
@@ -31,9 +26,8 @@
       "https://cache.nixos.org"
     ];
 
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
+    trusted-public-keys =
+      [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
     builders-use-substitutes = true;
   };
 
@@ -100,10 +94,10 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif CJK SC" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans CJK SC" "Noto Color Emoji"];
-      monospace = ["Noto Sans Mono CJK SC" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+      serif = [ "Noto Serif CJK SC" "Noto Color Emoji" ];
+      sansSerif = [ "Noto Sans CJK SC" "Noto Color Emoji" ];
+      monospace = [ "Noto Sans Mono CJK SC" "Noto Color Emoji" ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
 
@@ -123,7 +117,7 @@
     desktopManager.plasma6.enable = true;
 
     openvpn.servers = {
-      clo91eaf  = { config = " config /etc/openvpn/client/clo91eaf.conf "; };
+      clo91eaf = { config = " config /etc/openvpn/client/clo91eaf.conf "; };
     };
 
     keyd = {
@@ -141,7 +135,6 @@
       };
     };
   };
-
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {

@@ -4,42 +4,40 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/30eeea9f-6b5f-4083-a577-76b501299f02";
-      fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/30eeea9f-6b5f-4083-a577-76b501299f02";
+    fsType = "btrfs";
+    options = [ "subvol=root" "compress=zstd" ];
+  };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/30eeea9f-6b5f-4083-a577-76b501299f02";
-      fsType = "btrfs";
-      options = [ "subvol=home" "compress=zstd" ];
-    };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/30eeea9f-6b5f-4083-a577-76b501299f02";
+    fsType = "btrfs";
+    options = [ "subvol=home" "compress=zstd" ];
+  };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/30eeea9f-6b5f-4083-a577-76b501299f02";
-      fsType = "btrfs";
-      options = [ "subvol=nix" "noatime" "compress=zstd" ];
-    };
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/30eeea9f-6b5f-4083-a577-76b501299f02";
+    fsType = "btrfs";
+    options = [ "subvol=nix" "noatime" "compress=zstd" ];
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2A02-4202";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/2A02-4202";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ba3d96e9-af14-4889-9aa8-de9ce307aaf2"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/ba3d96e9-af14-4889-9aa8-de9ce307aaf2"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -50,5 +48,6 @@
   # networking.interfaces.wlp7s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

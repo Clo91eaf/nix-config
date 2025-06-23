@@ -1,11 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ config, pkgs, ... }: {
   imports = [
     ../modules/system.nix
 
@@ -17,7 +13,7 @@
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot"; 
+      efiSysMountPoint = "/boot";
     };
     grub = {
       enable = true;
@@ -49,7 +45,7 @@
   networking.networkmanager.enable = true;
 
   # nvidia card settings
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
   hardware.nvidia = {
     # Modesetting is required.
