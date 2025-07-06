@@ -86,7 +86,20 @@
     };
 
     # shell
-    bash.enable = true;
+    zsh = {
+      enable = true;
+      syntaxHighlighting.enable = true;
+
+      zplug = {
+        enable = true;
+        plugins = [{ name = "zsh-users/zsh-autosuggestions"; }];
+      };
+      oh-my-zsh = { # "ohMyZsh" without Home Manager
+        enable = true;
+        plugins = [ "git" ]; # for some git aliases
+      };
+    };
+    starship.enable = true; # A package manager for the shell
     atuin.enable = true; # shell history
     btop.enable = true; # replacement of htop/nmon
     eza.enable = true; # A modern replacement for ‘ls’
