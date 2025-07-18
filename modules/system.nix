@@ -117,7 +117,7 @@
     desktopManager.plasma6.enable = true;
 
     openvpn.servers = {
-      clo91eaf = { config = " config /etc/openvpn/client/clo91eaf.conf "; };
+      clo91eaf2 = { config = " config /etc/openvpn/client/clo91eaf2.conf "; };
     };
 
     keyd = {
