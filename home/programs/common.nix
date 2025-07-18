@@ -109,7 +109,12 @@
       extraConfig = ''
         Host 172.24.5.184
         HostName 172.24.5.184
-        User clo91eaf'';
+        User clo91eaf
+        
+        Host 172.24.6.56
+        HostName 172.24.6.56
+        User clo91eaf
+      '';
     };
   };
 }
