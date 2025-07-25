@@ -45,6 +45,9 @@
 
     # communication
     telegram-desktop
+
+    # music
+    go-musicfox
   ];
 
   programs = {
