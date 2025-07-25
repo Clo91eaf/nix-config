@@ -70,7 +70,16 @@
       enable = true;
       clock24 = true;
       keyMode = "vi";
-      extraConfig = "mouse on";
+
+      shortcut = "a";
+      extraConfig = ''
+        set -g default-terminal "xterm-256color"
+        set-option -g mouse on
+
+        bind | split-window -h -c "#{pane_current_path}"
+        bind - split-window -v -c "#{pane_current_path}"
+        bind n new-window -c "#{pane_current_path}"
+      '';
     };
 
     bat = {
