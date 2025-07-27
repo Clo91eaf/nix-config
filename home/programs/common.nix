@@ -45,6 +45,7 @@
 
     # communication
     telegram-desktop
+    wemeet
 
     # music
     go-musicfox
