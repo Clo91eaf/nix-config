@@ -28,15 +28,16 @@
     vim
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
-        sdras.night-owl
-        jnoortheen.nix-ide
-        vscodevim.vim
-        vspacecode.whichkey
-        mkhl.direnv
+        bbenoist.nix
+        eamodio.gitlens
         github.copilot
         github.copilot-chat
+        mkhl.direnv
         ms-vscode-remote.remote-ssh
         ms-vscode-remote.remote-ssh-edit
+        sdras.night-owl
+        vscodevim.vim
+        vspacecode.whichkey
       ];
     })
 
