@@ -104,6 +104,10 @@
       enable = true;
       syntaxHighlighting.enable = true;
 
+      shellAliases = {
+        ff = "fastfetch --config examples/10.jsonc";
+      };
+
       zplug = {
         enable = true;
         plugins = [{ name = "zsh-users/zsh-autosuggestions"; }];
