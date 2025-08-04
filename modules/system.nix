@@ -112,7 +112,13 @@
   services = {
     xserver.enable = true;
 
-    displayManager.sddm.enable = true;
+    displayManager = {
+      sddm.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "Clo91eaf";
+      };
+    };
 
     desktopManager.plasma6.enable = true;
 
