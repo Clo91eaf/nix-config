@@ -50,6 +50,9 @@
 
     # music
     go-musicfox
+
+    # entertainment
+    ttyper
   ];
 
   programs = {
