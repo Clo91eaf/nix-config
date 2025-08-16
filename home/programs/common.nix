@@ -1,5 +1,8 @@
 { lib, pkgs, catppuccin-bat, ... }: {
   home.packages = with pkgs; [
+    # system
+    grub2
+
     # nix
     nixfmt-classic
 
@@ -109,6 +112,7 @@
 
       shellAliases = {
         ff = "fastfetch --config examples/10.jsonc";
+        win = "sudo grub-reboot 1 && reboot";
       };
 
       zplug = {
