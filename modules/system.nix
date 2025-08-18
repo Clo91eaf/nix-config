@@ -7,7 +7,7 @@
     home = "/home/Clo91eaf";
     password = "a";
     description = username;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
   };
   users.mutableUsers = false;
 
