@@ -135,6 +135,9 @@
             main = {
               capslock = "esc";
               esc = "capslock";
+              # https://github.com/rvaiya/keyd/issues/209#issuecomment-1121386837
+              rightshift = "rightshift";
+              rightcontrol = "rightcontrol";
             };
           };
         };
