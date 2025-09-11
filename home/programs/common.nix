@@ -50,9 +50,10 @@
     # communication
     telegram-desktop
     wemeet
+    feishu
 
     # music
-    go-musicfox
+    spotify
 
     # entertainment
     ttyper
