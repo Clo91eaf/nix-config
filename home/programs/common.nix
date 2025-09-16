@@ -57,6 +57,9 @@
 
     # entertainment
     ttyper
+
+    # email
+    thunderbird
   ];
 
   programs = {
