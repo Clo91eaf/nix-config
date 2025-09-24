@@ -22,7 +22,6 @@
     ttyper
 
     btop
-    eza
     jq
 
     # connects
@@ -65,6 +64,11 @@
         HostName 172.24.6.56
         User clo91eaf
       '';
+    };
+
+    eza = {
+      enable = true;
+      theme = "tokyonight";
     };
   };
 }

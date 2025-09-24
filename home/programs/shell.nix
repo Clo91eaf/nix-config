@@ -14,6 +14,14 @@
       shellAliases = {
         ff = "fastfetch --config examples/10.jsonc";
         win = "sudo grub-reboot 1 && reboot";
+        l = "eza --icons";
+        ls = "eza --icons";
+        ll = "eza --icons --group --group-directories-first --long --git";
+        lg = "eza --icons --group --group-directories-first --long --git --git-ignore";
+        le = "eza --icons --group --group-directories-first --long --extended";
+        lt = "eza --icons --group --group-directories-first --tree";
+        lc = "eza --icons --group --group-directories-first --across";
+        lo = "eza --icons --group --group-directories-first --oneline";
       };
 
       zplug = {
