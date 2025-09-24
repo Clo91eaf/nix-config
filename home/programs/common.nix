@@ -8,9 +8,6 @@
     # system
     grub2
 
-    # nix
-    nixfmt-rfc-style
-
     # fetch
     wget
     curl
@@ -21,11 +18,12 @@
 
     # utils
     ripgrep
-    htop
-    direnv
-
-    # shells
     fastfetch
+    ttyper
+
+    btop
+    eza
+    jq
 
     # connects
     openvpn
@@ -42,48 +40,11 @@
     wemeet
     feishu
 
-    # music
-    spotify
-
-    # entertainment
-    ttyper
-
     # email
     thunderbird
   ];
 
   programs = {
-    alacritty = {
-      enable = true;
-      settings = {
-        window = {
-          decorations = "Full";
-          opacity = 0.9;
-        };
-        font.normal = {
-          family = "FiraCode Nerd Font";
-          style = "Regular";
-        };
-      };
-      theme = "tokyo_night";
-    };
-
-    tmux = {
-      enable = true;
-      clock24 = true;
-      keyMode = "vi";
-
-      shortcut = "a";
-      extraConfig = ''
-        set -g default-terminal "xterm-256color"
-        set-option -g mouse on
-
-        bind | split-window -h -c "#{pane_current_path}"
-        bind - split-window -v -c "#{pane_current_path}"
-        bind n new-window -c "#{pane_current_path}"
-      '';
-    };
-
     bat = {
       enable = true;
       config = {
@@ -92,31 +53,6 @@
       };
     };
 
-    # shell
-    zsh = {
-      enable = true;
-      syntaxHighlighting.enable = true;
-
-      shellAliases = {
-        ff = "fastfetch --config examples/10.jsonc";
-        win = "sudo grub-reboot 1 && reboot";
-      };
-
-      zplug = {
-        enable = true;
-        plugins = [ { name = "zsh-users/zsh-autosuggestions"; } ];
-      };
-      oh-my-zsh = {
-        # "ohMyZsh" without Home Manager
-        enable = true;
-        plugins = [ "git" ]; # for some git aliases
-      };
-    };
-    starship.enable = true; # A package manager for the shell
-    atuin.enable = true; # shell history
-    btop.enable = true; # replacement of htop/nmon
-    eza.enable = true; # A modern replacement for ‘ls’
-    jq.enable = true; # A lightweight and flexible command-line JSON processor
     ssh = {
       enable = true; # ssh
       extraConfig = ''
