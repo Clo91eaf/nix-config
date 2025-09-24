@@ -1,10 +1,16 @@
-{ lib, pkgs, catppuccin-bat, ... }: {
+{
+  lib,
+  pkgs,
+  catppuccin-bat,
+  ...
+}:
+{
   home.packages = with pkgs; [
     # system
     grub2
 
     # nix
-    nixfmt-classic
+    nixfmt-rfc-style
 
     # fetch
     wget
@@ -15,7 +21,6 @@
     unzip
 
     # utils
-    git
     ripgrep
     htop
     direnv
@@ -107,9 +112,10 @@
 
       zplug = {
         enable = true;
-        plugins = [{ name = "zsh-users/zsh-autosuggestions"; }];
+        plugins = [ { name = "zsh-users/zsh-autosuggestions"; } ];
       };
-      oh-my-zsh = { # "ohMyZsh" without Home Manager
+      oh-my-zsh = {
+        # "ohMyZsh" without Home Manager
         enable = true;
         plugins = [ "git" ]; # for some git aliases
       };

@@ -1,9 +1,11 @@
-{ pkgs, ... }: {
-  home.packages = [ pkgs.gh ];
+{ pkgs, ... }:
+{
+  home.packages = [
+    pkgs.git
+    pkgs.gh
+  ];
 
   programs.git = {
     enable = true;
-
-    # ... Other options ...
   };
 }
