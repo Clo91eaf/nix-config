@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  catppuccin-bat,
   ...
 }:
 {
@@ -90,13 +89,6 @@
       config = {
         pager = "less -FR";
         theme = "catppuccin-mocha";
-      };
-      themes = {
-        # https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
-        catppuccin-mocha = {
-          src = catppuccin-bat;
-          file = "Catppuccin-mocha.tmTheme";
-        };
       };
     };
 
