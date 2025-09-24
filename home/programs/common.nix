@@ -39,6 +39,7 @@
     telegram-desktop
     wemeet
     feishu
+    qq
 
     # email
     thunderbird
