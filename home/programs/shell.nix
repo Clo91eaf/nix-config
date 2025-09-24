@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    fzf
+  ];
+
   programs = {
     starship.enable = true;
     atuin.enable = true;
@@ -14,12 +18,11 @@
 
       zplug = {
         enable = true;
-        plugins = [ { name = "zsh-users/zsh-autosuggestions"; } ];
-      };
-      oh-my-zsh = {
-        # "ohMyZsh" without Home Manager
-        enable = true;
-        plugins = [ "git" ]; # for some git aliases
+        plugins = [
+          { name = "zsh-users/zsh-autosuggestions"; }
+          { name = "zsh-users/zsh-completions"; }
+          { name = "Aloxaf/fzf-tab"; }
+        ];
       };
     };
 
