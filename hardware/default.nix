@@ -40,11 +40,6 @@
     };
   };
 
-  # networking.hostName = "Clo91eaf's NixOS"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # nvidia card settings
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {
