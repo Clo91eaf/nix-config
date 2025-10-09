@@ -6,6 +6,7 @@
         jnoortheen.nix-ide
         eamodio.gitlens
         github.copilot
+        github.copilot-chat
         mkhl.direnv
         ms-vscode-remote.remote-ssh
         ms-vscode-remote.remote-ssh-edit
