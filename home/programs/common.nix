@@ -31,17 +31,12 @@
     # editor
     vim
 
-    # browser
-    firefox
-
     # communication
     telegram-desktop
     wemeet
     feishu
     qq
-
-    # email
-    thunderbird
+    wechat
   ];
 
   programs = {
