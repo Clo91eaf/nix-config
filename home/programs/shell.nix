@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    fzf
-  ];
-
   programs = {
     starship.enable = true;
     atuin.enable = true;
@@ -29,7 +25,6 @@
         plugins = [
           { name = "zsh-users/zsh-autosuggestions"; }
           { name = "zsh-users/zsh-completions"; }
-          { name = "Aloxaf/fzf-tab"; }
         ];
       };
     };
