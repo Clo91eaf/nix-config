@@ -134,10 +134,18 @@
     ];
   };
 
-  environment.variables = {
-    # set the default editor to vim
-    EDITOR = "vim";
-    VISUAL = "vim";
+  environment = {
+    variables = {
+      # set the default editor to vim
+      EDITOR = "vim";
+      VISUAL = "vim";
+    };
+
+    sessionVariables = {
+      GTK_IM_MODULE = "fcitx";
+      QT_IM_MODULE = "fcitx";
+      XMODIFIERS = "@im=fcitx";
+    };
   };
 
   services = {

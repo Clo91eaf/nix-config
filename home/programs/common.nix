@@ -30,13 +30,6 @@
 
     # editor
     vim
-
-    # communication
-    telegram-desktop
-    wemeet
-    feishu
-    qq
-    wechat
   ];
 
   programs = {
