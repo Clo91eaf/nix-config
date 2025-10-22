@@ -20,13 +20,26 @@
         lo = "eza --icons --group --group-directories-first --oneline";
       };
 
-      zplug = {
-        enable = true;
-        plugins = [
-          { name = "zsh-users/zsh-autosuggestions"; }
-          { name = "zsh-users/zsh-completions"; }
-        ];
-      };
+      plugins = [
+        {
+          name = "zsh-autosuggestions";
+          src = pkgs.fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-autosuggestions";
+            rev = "v0.7.1";
+            sha256 = "sha256-vpTyYq9ZgfgdDsWzjxVAE7FZH4MALMNZIFyEOBLm5Qo=";
+          };
+        }
+        {
+          name = "zsh-completions";
+          src = pkgs.fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-completions";
+            rev = "0.35.0";
+            sha256 = "sha256-GFHlZjIHUWwyeVoCpszgn4AmLPSSE8UVNfRmisnhkpg=";
+          };
+        }
+      ];
     };
 
     alacritty = {
