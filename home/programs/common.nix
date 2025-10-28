@@ -15,6 +15,7 @@
     # archives
     zip
     unzip
+    unrar
 
     # utils
     ripgrep
@@ -23,6 +24,7 @@
 
     btop
     jq
+    wpsoffice-cn
 
     # connects
     openvpn
