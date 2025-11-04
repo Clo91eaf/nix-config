@@ -42,19 +42,16 @@
       ];
     };
 
-    alacritty = {
+    ghostty = {
       enable = true;
       settings = {
-        window = {
-          decorations = "Full";
-          opacity = 0.9;
-        };
-        font.normal = {
-          family = "FiraCode Nerd Font";
-          style = "Regular";
-        };
+        font-size = 12;
+        font-family = "FiraCode Nerd Font";
+        background-opacity = 0.9;
+        theme = "catppuccin-mocha";
+        mouse-hide-while-typing = true;
+        scrollback-limit = 16384;
       };
-      theme = "tokyo_night";
     };
 
     tmux = {
