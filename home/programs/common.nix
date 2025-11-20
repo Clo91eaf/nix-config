@@ -55,10 +55,5 @@
         User clo91eaf
       '';
     };
-
-    eza = {
-      enable = true;
-      theme = "tokyonight";
-    };
   };
 }
