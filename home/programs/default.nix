@@ -9,5 +9,6 @@
     ./obs.nix
     ./shell.nix
     ./vscode.nix
+    ./noctalia.nix
   ];
 }

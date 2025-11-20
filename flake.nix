@@ -30,7 +30,7 @@
       nixosConfigurations.nixos =
         let
           username = "Clo91eaf";
-          specialArgs = { inherit username; };
+          specialArgs = { inherit username inputs; };
         in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
