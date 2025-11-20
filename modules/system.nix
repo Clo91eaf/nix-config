@@ -145,7 +145,7 @@
     };
 
     sessionVariables = {
-      GTK_IM_MODULE = "fcitx";
+      NIXOS_OZONE_WL = "1";
       QT_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
     };
@@ -161,8 +161,6 @@
         user = "Clo91eaf";
       };
     };
-
-    desktopManager.plasma6.enable = true;
 
     openvpn.servers = {
       clo91eaf2 = {
@@ -202,4 +200,11 @@
     tunMode = true;
     serviceMode = true;
   };
+
+  programs.niri.enable = true;
+
+  # noctalia shell
+  environment.systemPackages = with pkgs; [
+    inputs.noctalia.packages.${system}.default
+  ];
 }
