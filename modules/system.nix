@@ -197,5 +197,9 @@
 
   # vpn
   services.mihomo.tunMode = true;
-  programs.clash-verge.enable = true;
+  programs.clash-verge = {
+    enable = true;
+    tunMode = true;
+    serviceMode = true;
+  };
 }
