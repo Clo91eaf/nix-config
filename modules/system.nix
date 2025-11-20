@@ -78,10 +78,13 @@
     enable = true;
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
-      rime-data
-      fcitx5-gtk
-      fcitx5-rime
-      fcitx5-chinese-addons
+      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
+      fcitx5-material-color # a color theme
+      (fcitx5-rime.override {
+        rimeDataPkgs = [
+          rime-wanxiang
+        ];
+      })
     ];
   };
 
