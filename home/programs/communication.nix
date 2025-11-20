@@ -5,6 +5,5 @@
     wemeet
     feishu
     qq
-    wechat
   ];
 }

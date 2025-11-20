@@ -13,8 +13,8 @@
     # ../../home/shell
   ];
 
-  programs.git = {
-    userName = "Clo91eaf";
-    userEmail = "clo91eaf@qq.com";
+  programs.git.settings.user = {
+    name = "Clo91eaf";
+    email = "clo91eaf@qq.com";
   };
 }

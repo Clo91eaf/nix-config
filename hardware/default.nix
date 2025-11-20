@@ -47,8 +47,8 @@
     # hardware acceleration for video decoding and encoding
     extraPackages = with pkgs; [
       libva
+      libva-vdpau-driver
       libvdpau-va-gl
-      vaapiVdpau
       nvidia-vaapi-driver
     ];
   };
