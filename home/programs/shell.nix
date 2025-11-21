@@ -39,7 +39,6 @@
       settings = {
         font-size = 12;
         font-family = "FiraCode Nerd Font";
-        background-opacity = 0.9;
         theme = "Catppuccin Mocha";
         mouse-hide-while-typing = true;
         scrollback-limit = 16384;
