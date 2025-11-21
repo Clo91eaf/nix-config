@@ -57,15 +57,14 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "systems": "systems"
+        ]
       },
       "locked": {
-        "lastModified": 1763636090,
-        "narHash": "sha256-EzC/gsDwUdP7PlpCqzMkCkVCjhQ+BB91R2tv8QBd1/w=",
+        "lastModified": 1763738840,
+        "narHash": "sha256-7g3Cz+kyumPTQps1Y3YiuNLIh50dRQanKYkx86lpKDY=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "3976a21dc7a91fe2d769c51f9a9e0fdcd1d43c8a",
+        "rev": "5d9cfeb9d0138b1f3c5269fda661c983a66aa170",
         "type": "github"
       },
       "original": {
@@ -83,21 +82,6 @@
         "zen-browser": "zen-browser"
       }
     },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
     "zen-browser": {
       "inputs": {
         "home-manager": [
@@ -108,11 +92,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763616019,
-        "narHash": "sha256-yCNgkYovgIpOZankp38BxKFISmdc2b34vtEuVuxhTuk=",
+        "lastModified": 1763663426,
+        "narHash": "sha256-txr1cH5j+b14jYGvE0BQE/6OgSyHQqGoeeEFlJz7Q8o=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "a0a29968bccb2f118b33360697d5cc5fdae30cfa",
+        "rev": "34fd0de7cea96cab0307cf07aa5723b60fd775ef",
         "type": "github"
       },
       "original": {
