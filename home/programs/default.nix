@@ -10,5 +10,6 @@
     ./shell.nix
     ./vscode.nix
     ./noctalia.nix
+    ./wechat.nix
   ];
 }
