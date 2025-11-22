@@ -11,5 +11,6 @@
     ./vscode.nix
     ./noctalia.nix
     ./wechat.nix
+    ./music.nix
   ];
 }
