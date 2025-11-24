@@ -12,5 +12,6 @@
     ./noctalia.nix
     ./wechat.nix
     ./music.nix
+    ./yazi.nix
   ];
 }
