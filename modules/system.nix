@@ -80,16 +80,29 @@
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
-      fcitx5-material-color # a color theme
-      (fcitx5-rime.override {
-        rimeDataPkgs = [
-          rime-wanxiang
-        ];
-      })
-    ];
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        fcitx5-gtk
+        (fcitx5-rime.override {
+          rimeDataPkgs = [
+            rime-data
+            rime-wanxiang
+          ];
+        })
+      ];
+      settings = {
+        inputMethod = {
+          GroupOrder."0" = "Default";
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+            DefaultIM = "rime";
+          };
+          "Groups/0/Items/0".Name = "rime";
+        };
+      };
+    };
   };
 
   fonts = {
