@@ -10,6 +10,23 @@
     enable = true;
     settings = {
       dock.displayMode = "auto_hide";
+      bar.widgets.right = [
+        {
+          id = "Taskbar";
+        }
+        {
+          id = "NotificationHistory";
+        }
+        {
+          id = "Volume";
+        }
+        {
+          id = "Microphone";
+        }
+        {
+          id = "Clock";
+        }
+      ];
       wallpaper = {
         randomEnabled = true;
         overviewEnabled = true;
