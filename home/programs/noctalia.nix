@@ -9,10 +9,13 @@
   programs.noctalia-shell = {
     enable = true;
     settings = {
-      dock.displayMode = "auto_hide";
+      dock.enable = false;
       bar.widgets.right = [
         {
           id = "Taskbar";
+        }
+        {
+          id = "Tray";
         }
         {
           id = "NotificationHistory";
