@@ -1,0 +1,39 @@
+{ username, lib, ... }:
+{
+  # customise /etc/nix/nix.conf declaratively via `nix.settings`
+  nix.settings = {
+    # enable flakes globally
+    experimental-features = [
+      "nix-command"
+      "flakes"
+      "pipe-operators"
+    ];
+
+    substituters = [
+      # cache mirror located in China
+      # status: https://mirror.sjtu.edu.cn/
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      # status: https://mirrors.ustc.edu.cn/status/
+      # "https://mirrors.ustc.edu.cn/nix-channels/store"
+
+      "https://cache.nixos.org"
+    ];
+
+    trusted-public-keys = [ "cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+    trusted-users = [
+      "root"
+      username
+    ];
+    builders-use-substitutes = true;
+  };
+
+  # do garbage collection weekly to keep disk usage low
+  nix.gc = {
+    automatic = lib.mkDefault true;
+    # do not gc generations
+    options = lib.mkDefault "";
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+}

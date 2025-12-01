@@ -49,9 +49,20 @@
           inherit specialArgs;
           system = "x86_64-linux";
 
+          # module organization of the configuration files
+          # nix-config
+          # +-- hardware
+          # +-- software
+          #     +-- nixos <----------+
+          #     +-- home <-----------+-+
+          #     +-- users<username>  | |
+          #         +-- nixos  ------+ |
+          #         +-- home ----------+
+
           modules = [
-            ./hardware
-            ./users/${username}/nixos.nix
+            ./hardware #hardware
+
+            ./users/${username}/nixos.nix #user-nixos
 
             home-manager.nixosModules.home-manager
             {
@@ -60,7 +71,7 @@
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./users/${username}/home.nix;
+              home-manager.users.${username} = import ./users/${username}/home.nix; #user-home
             }
           ];
         };
