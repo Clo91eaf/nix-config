@@ -2,10 +2,7 @@
 {
   home.packages = with pkgs; [
     git
-    gh
   ];
 
-  programs.git = {
-    enable = true;
-  };
+  programs.git.enable = true;
 }

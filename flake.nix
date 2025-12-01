@@ -37,9 +37,9 @@
       nixosConfigurations.nixos =
         let
           username = "Clo91eaf";
-          specialArgs = { 
-            inherit username inputs; 
-            pkgs-stable = import nixpkgs-stable { 
+          specialArgs = {
+            inherit username inputs;
+            pkgs-stable = import nixpkgs-stable {
               system = "x86_64-linux";
               config.allowUnfree = true;
             };

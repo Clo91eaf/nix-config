@@ -4,7 +4,7 @@
     ./editor
     ./message
     ./misc
-    ./niri
     ./shell
+    ./niri
   ];
 }

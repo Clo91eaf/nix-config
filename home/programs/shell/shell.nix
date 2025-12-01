@@ -1,5 +1,35 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    # system
+    grub2
+
+    # fetch
+    wget
+    curl
+
+    # archives
+    zip
+    unzip
+    unrar
+
+    # utils
+    ripgrep
+    fastfetch
+    ttyper
+
+    btop
+    jq
+    wpsoffice-cn
+
+    # connects
+    openvpn
+    tigervnc
+
+    # editor
+    vim
+  ];
+
   programs = {
     starship.enable = true;
     atuin.enable = true;
@@ -58,6 +88,27 @@
         bind | split-window -h -c "#{pane_current_path}"
         bind - split-window -v -c "#{pane_current_path}"
         bind n new-window -c "#{pane_current_path}"
+      '';
+    };
+
+    bat = {
+      enable = true;
+      config = {
+        pager = "less -FR";
+        theme = "catppuccin-mocha";
+      };
+    };
+
+    ssh = {
+      enable = true; # ssh
+      extraConfig = ''
+        Host 172.24.5.184
+        HostName 172.24.5.184
+        User clo91eaf
+
+        Host 172.24.6.56
+        HostName 172.24.6.56
+        User clo91eaf
       '';
     };
   };
