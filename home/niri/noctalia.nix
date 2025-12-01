@@ -1,4 +1,13 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+let
+  wallpaperDirectory = "${config.home.homeDirectory}/Pictures/wallpaper";
+  avatarImg = "${config.home.homeDirectory}/Pictures/Avatar/.face";
+in
 {
   # import the home manager module
   imports = [
@@ -53,7 +62,7 @@
         };
       };
       general = {
-        avatarImage = "/home/Clo91eaf/Pictures/Avatar/.face";
+        avatarImage = avatarImg;
         dimmerOpacity = 0.6;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
@@ -128,7 +137,7 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = true;
-        directory = "/home/Clo91eaf/Pictures/wallpaper";
+        directory = wallpaperDirectory;
         enableMultiMonitorDirectories = false;
         recursiveSearch = false;
         setWallpaperOnAllMonitors = true;
@@ -150,7 +159,7 @@
         wallhavenResolutionMode = "atleast";
         wallhavenResolutionWidth = "";
         wallhavenResolutionHeight = "";
-        defaultWallpaper = "/home/Clo91eaf/Pictures/wallpaper/100102207_p0.jpg";
+        defaultWallpaper = "${wallpaperDirectory}/100102207_p0.jpg";
         monitors = [ ];
       };
       appLauncher = {
