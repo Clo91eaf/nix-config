@@ -11,7 +11,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    home = "/home/Clo91eaf";
+    home = "/home/${username}";
     password = "a";
     description = username;
     extraGroups = [
@@ -44,7 +44,7 @@
     trusted-public-keys = [ "cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
     trusted-users = [
       "root"
-      "Clo91eaf"
+      username
     ];
     builders-use-substitutes = true;
   };
@@ -175,7 +175,7 @@
       sddm.enable = true;
       autoLogin = {
         enable = true;
-        user = "Clo91eaf";
+        user = username;
       };
     };
 
