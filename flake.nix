@@ -23,6 +23,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -60,9 +64,9 @@
           #         +-- home ----------+
 
           modules = [
-            ./hardware #hardware
+            ./hardware # hardware
 
-            ./users/${username}/nixos.nix #user-nixos
+            ./users/${username}/nixos.nix # user-nixos
 
             home-manager.nixosModules.home-manager
             {
@@ -71,7 +75,7 @@
 
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./users/${username}/home.nix; #user-home
+              home-manager.users.${username} = import ./users/${username}/home.nix; # user-home
             }
           ];
         };
