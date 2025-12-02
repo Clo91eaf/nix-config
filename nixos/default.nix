@@ -22,10 +22,6 @@
   networking = {
     networkmanager.enable = true;
     firewall.enable = false;
-    hosts."127.0.0.1" = [
-      # Block this domain to prevent QQ from auto-updating.
-      "qqpatch.gtimg.cn"
-    ];
   };
 
   environment = {
