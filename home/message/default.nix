@@ -1,9 +1,10 @@
 {
   imports = [
-    ./telegram.nix
-    ./wechat.nix
-    ./qq.nix
     ./feishu.nix
+    ./qq.nix
+    ./telegram.nix
     ./thunderbird.nix
+    ./wechat.nix
+    ./wemeet.nix
   ];
 }
