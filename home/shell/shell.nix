@@ -101,6 +101,27 @@
 
     ssh = {
       enable = true; # ssh
+
+      # evaluation warning: Clo91eaf profile: `programs.ssh` default 
+      # values will be removed in the future.
+      # Consider setting `programs.ssh.enableDefaultConfig` to false,
+      # and manually set the default values you want to keep at
+      # `programs.ssh.matchBlocks."*"`.
+      enableDefaultConfig = false;
+      matchBlocks."*" = {
+        forwardAgent = false;
+        addKeysToAgent = "no";
+        compression = false;
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        hashKnownHosts = false;
+        userKnownHostsFile = "~/.ssh/known_hosts";
+        controlMaster = "no";
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlPersist = "no";
+      };
+
+      # add custom hosts for plct
       extraConfig = ''
         Host 172.24.5.184
         HostName 172.24.5.184
