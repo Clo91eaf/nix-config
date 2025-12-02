@@ -15,7 +15,6 @@
 
     # utils
     ripgrep
-    fastfetch
     ttyper
 
     btop
@@ -35,33 +34,14 @@
     atuin.enable = true;
     zsh = {
       enable = true;
+      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
       shellAliases = {
-        ff = "fastfetch --config examples/10.jsonc";
+        ff = "fastfetch";
         win = "sudo grub-reboot 1 && reboot";
+        upd = "sudo nixos-rebuild switch --flake ~/nix-config#nixos";
       };
-
-      plugins = [
-        {
-          name = "zsh-autosuggestions";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-autosuggestions";
-            rev = "v0.7.1";
-            sha256 = "sha256-vpTyYq9ZgfgdDsWzjxVAE7FZH4MALMNZIFyEOBLm5Qo=";
-          };
-        }
-        {
-          name = "zsh-completions";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-completions";
-            rev = "0.35.0";
-            sha256 = "sha256-GFHlZjIHUWwyeVoCpszgn4AmLPSSE8UVNfRmisnhkpg=";
-          };
-        }
-      ];
     };
 
     ghostty = {
@@ -102,7 +82,7 @@
     ssh = {
       enable = true; # ssh
 
-      # evaluation warning: Clo91eaf profile: `programs.ssh` default 
+      # evaluation warning: Clo91eaf profile: `programs.ssh` default
       # values will be removed in the future.
       # Consider setting `programs.ssh.enableDefaultConfig` to false,
       # and manually set the default values you want to keep at
