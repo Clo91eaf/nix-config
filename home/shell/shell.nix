@@ -75,7 +75,7 @@
       enable = true;
       config = {
         pager = "less -FR";
-        theme = "catppuccin-mocha";
+        theme = "Catppuccin Mocha";
       };
     };
 
