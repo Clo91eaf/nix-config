@@ -27,11 +27,11 @@
     builders-use-substitutes = true;
   };
 
-  # do garbage collection weekly to keep disk usage low
+  # do garbage collection monthly to keep disk usage low
   nix.gc = {
-    automatic = lib.mkDefault true;
-    # do not gc generations
-    options = lib.mkDefault "";
+    automatic = true;
+    dates = "monthly";
+    options = "--delete-older-than 30d";
   };
 
   # Allow unfree packages
