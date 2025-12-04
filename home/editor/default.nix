@@ -1,7 +1,4 @@
+{ mylib, ... }:
 {
-  imports = [
-    ./nixvim.nix
-    ./vscode.nix
-    ./zed.nix
-  ];
+  imports = mylib.scanPaths ./.;
 }

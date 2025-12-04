@@ -41,8 +41,11 @@
       nixosConfigurations.nixos =
         let
           username = "Clo91eaf";
+
+          mylib = import ./mylib/utils.nix { inherit (nixpkgs) lib; };
+
           specialArgs = {
-            inherit username inputs;
+            inherit username mylib inputs;
             pkgs-stable = import nixpkgs-stable {
               system = "x86_64-linux";
               config.allowUnfree = true;

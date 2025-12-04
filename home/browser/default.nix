@@ -1,7 +1,4 @@
+{ mylib, ... }:
 {
-  imports = [
-    ./firefox.nix
-    ./chrome.nix
-    ./zen.nix
-  ];
+  imports = mylib.scanPaths ./.;
 }

@@ -1,7 +1,4 @@
+{ mylib, ... }:
 {
-  imports = [
-    ./gemini-cli.nix
-    ./obs.nix
-    ./splayer.nix
-  ];
+  imports = mylib.scanPaths ./.;
 }

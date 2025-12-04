@@ -2,18 +2,12 @@
   inputs,
   pkgs,
   lib,
+  mylib,
   username,
   ...
 }:
 {
-  imports = [
-    ./fonts.nix
-    ./i18n.nix
-    ./nix.nix
-    ./programs.nix
-    ./services.nix
-    ./users.nix
-  ];
+  imports = mylib.scanPaths ./.;
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";

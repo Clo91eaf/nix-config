@@ -1,13 +1,6 @@
-{ username, ... }:
+{ username, mylib, ... }:
 {
-  imports = [
-    ./browser
-    ./editor
-    ./message
-    ./misc
-    ./shell
-    ./niri
-  ];
+  imports = mylib.scanPaths ./.;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
