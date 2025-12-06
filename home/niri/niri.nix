@@ -14,8 +14,4 @@ in
   # https://nixos-and-flakes.thiscute.world/zh/best-practices/accelerating-dotfiles-debugging
   # Symlink the external config file into the home manager config
   xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink niriConfigPath;
-
-  services.mako.enable = true; # notification daemon
-  services.swayidle.enable = true; # idle management daemon
-  services.polkit-gnome.enable = true; # polkit
 }
