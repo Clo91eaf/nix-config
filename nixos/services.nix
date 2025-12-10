@@ -40,5 +40,8 @@ in
         };
       };
     };
+
+    # media player controller daemon
+    playerctld.enable = true;
   };
 }
