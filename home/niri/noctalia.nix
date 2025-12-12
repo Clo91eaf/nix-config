@@ -6,6 +6,7 @@
 }:
 let
   wallpaperDirectory = "${config.home.homeDirectory}/Pictures/wallpaper";
+  wallpaperImg = "131521851_p4.jpg";
   avatarImg = "${config.home.homeDirectory}/Pictures/Avatar/.face";
 in
 {
@@ -143,10 +144,10 @@ in
         setWallpaperOnAllMonitors = true;
         fillMode = "crop";
         fillColor = "#000000";
-        randomEnabled = true;
+        randomEnabled = false;
         randomIntervalSec = 300;
         transitionDuration = 1500;
-        transitionType = "random";
+        transitionType = "fade";
         transitionEdgeSmoothness = 0.05;
         panelPosition = "follow_bar";
         hideWallpaperFilenames = false;
@@ -159,7 +160,7 @@ in
         wallhavenResolutionMode = "atleast";
         wallhavenResolutionWidth = "";
         wallhavenResolutionHeight = "";
-        defaultWallpaper = "${wallpaperDirectory}/100102207_p0.jpg";
+        defaultWallpaper = "${wallpaperDirectory}/${wallpaperImg}";
         monitors = [ ];
       };
       appLauncher = {
