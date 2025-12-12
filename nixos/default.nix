@@ -14,6 +14,7 @@
 
   # Enable networking
   networking = {
+    hostName = "desktop";
     networkmanager.enable = true;
     firewall.enable = false;
   };
