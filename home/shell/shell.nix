@@ -16,6 +16,7 @@
     # utils
     ripgrep
     ttyper
+    gh-dash
 
     btop
     jq
