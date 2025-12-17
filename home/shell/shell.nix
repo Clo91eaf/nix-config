@@ -53,6 +53,8 @@
         theme = "Catppuccin Mocha";
         mouse-hide-while-typing = true;
         scrollback-limit = 16384;
+        background-opacity = 0.7;
+        window-decoration = "none";
       };
     };
 
