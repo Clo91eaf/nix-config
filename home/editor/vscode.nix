@@ -3,18 +3,28 @@
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      Google.gemini-cli-vscode-ide-companion
+      # utilities
       eamodio.gitlens
-      github.copilot
-      github.copilot-chat
-      jnoortheen.nix-ide
-      mkhl.direnv
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
-      colejcummins.llvm-syntax-highlighting
-      sdras.night-owl
+
+      # vim
       vscodevim.vim
       vspacecode.whichkey
+
+      # themes
+      sdras.night-owl
+      enkia.tokyo-night
+
+      # ai
+      github.copilot
+      github.copilot-chat
+      Google.gemini-cli-vscode-ide-companion
+
+      # lsp
+      colejcummins.llvm-syntax-highlighting
+      jnoortheen.nix-ide
+      mkhl.direnv
     ];
   };
 }
