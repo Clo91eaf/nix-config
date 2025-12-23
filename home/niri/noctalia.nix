@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, inputs, ... }:
 let
   wallpaperDirectory = "${config.home.homeDirectory}/Pictures/wallpaper";
   wallpaperImg = "131521851_p4.jpg";

@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ username, ... }:
 let
   openvpnConfigPath = "/etc/openvpn/client/clo91eaf2.conf";
 in

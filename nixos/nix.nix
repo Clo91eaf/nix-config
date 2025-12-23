@@ -1,4 +1,4 @@
-{ username, lib, ... }:
+{ username, ... }:
 {
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {

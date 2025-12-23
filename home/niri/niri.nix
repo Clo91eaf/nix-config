@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   niriConfigPath = "${config.home.homeDirectory}/nix-config/home/niri/niri.config";
 in

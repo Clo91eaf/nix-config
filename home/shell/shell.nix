@@ -45,19 +45,6 @@
       };
     };
 
-    ghostty = {
-      enable = true;
-      settings = {
-        font-size = 12;
-        font-family = "FiraCode Nerd Font";
-        theme = "Catppuccin Mocha";
-        mouse-hide-while-typing = true;
-        scrollback-limit = 16384;
-        background-opacity = 0.7;
-        window-decoration = "none";
-      };
-    };
-
     tmux = {
       enable = true;
       clock24 = true;
