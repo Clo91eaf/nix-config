@@ -1,0 +1,18 @@
+# config: https://docs.qq.com/doc/DQ0FqSXBmYVpWVFpy
+
+patch:
+  __include: wanxiang_suggested_default:/
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Shift_L: noop
+    Shift_R: commit_text
+    Control_L: noop
+    Control_R: noop
+
+  "key_binder/bindings":
+    - {accept: bracketleft, send: Page_Up, when: paging}
+    - {accept: bracketright, send: Page_Down, when: has_menu}
+
+  "switcher/hotkeys":
+  - "F4"
