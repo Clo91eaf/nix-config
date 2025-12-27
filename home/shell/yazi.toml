@@ -1,0 +1,23 @@
+[mgr]
+show_symlink = true
+linemode = "none"
+ratio = [1, 2, 4]
+sort_by = "natural"
+sort_dir_first = true
+sort_reverse = false
+sort_sensitive = true
+
+[preview]
+cache_dir = ""
+image_filter = "lanczos3"
+image_quality = 90
+max_height = 1600
+max_width = 800
+tab_size = 1
+ueberzug_offset = [0, 0, 0, 0]
+ueberzug_scale = 1
+
+[tasks]
+bizarre_retry = 5
+macro_workers = 10
+micro_workers = 5
