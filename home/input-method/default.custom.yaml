@@ -1,0 +1,16 @@
+# ~/.local/share/fcitx5/rime/default.custom.yaml -> rime_wanxiang/default.yaml
+# config: https://docs.qq.com/doc/DQ0FqSXBmYVpWVFpy
+
+patch:
+  __include: wanxiang_suggested_default:/
+
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Control_L: noop
+    Control_R: noop
+    Shift_L: noop
+    Shift_R: commit_text
+
+  switcher/hotkeys:
+    - "F4"
