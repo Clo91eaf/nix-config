@@ -4,11 +4,12 @@
 {
   config,
   pkgs,
-  mylib,
   ...
 }:
 {
-  imports = mylib.scanPaths ./.;
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader = {

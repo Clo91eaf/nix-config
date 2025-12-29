@@ -38,7 +38,7 @@
       ...
     }:
     {
-      nixosConfigurations.nixos =
+      nixosConfigurations.desktop =
         let
           username = "Clo91eaf";
 

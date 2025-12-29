@@ -41,7 +41,7 @@
       shellAliases = {
         ff = "fastfetch";
         win = "sudo grub-reboot 1 && reboot";
-        upd = "sudo nixos-rebuild switch --flake ~/nix-config#nixos";
+        upd = "sudo nixos-rebuild switch --flake ~/nix-config#desktop --impure";
       };
     };
 
