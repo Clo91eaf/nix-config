@@ -42,7 +42,11 @@ in
               showNetworkStats = true;
             }
             { id = "ActiveWindow"; }
-            { id = "MediaMini"; }
+            {
+              id = "MediaMini";
+              showVisualizer = true;
+              visualizerType = "wave";
+            }
           ];
           center = [
             { id = "Workspace"; }
@@ -322,7 +326,7 @@ in
         visualizerType = "linear";
         visualizerQuality = "high";
         mprisBlacklist = [ ];
-        preferredPlayer = "";
+        preferredPlayer = "SPlayer";
         externalMixer = "pwvucontrol || pavucontrol";
       };
       brightness = {
