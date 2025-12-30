@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  keybinding = "${config.home.homeDirectory}/nix-config/home/editor/keybindings.json";
+  settings = "${config.home.homeDirectory}/nix-config/home/editor/settings.json";
+in
 {
   programs.vscode = {
     enable = true;
@@ -27,4 +31,7 @@
       mkhl.direnv
     ];
   };
+
+  xdg.configFile."Code/User/keybindings.json".source = config.lib.file.mkOutOfStoreSymlink keybinding;
+  xdg.configFile."Code/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink settings;
 }

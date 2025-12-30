@@ -1,0 +1,106 @@
+{
+  "editor.fontFamily": "Fira Code, FiraCode Nerd Font, Noto Color emoji",
+  "editor.fontSize": 19,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  // vim
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 300,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "p",
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
+    }
+  ],
+  "extensions.experimental.affinity": { // To improve performance
+    "vscodevim.vim": 1
+  },
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.fontSize": 17,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "files.autoSave": "afterDelay",
+  "explorer.confirmDragAndDrop": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "workbench.startupEditor": "none",
+  "gitlens.launchpad.indicator.enabled": false,
+  "update.mode": "none",
+  "nix.formatterPath": "nixfmt",
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.asl": "lua",
+    "*.nix": "nix",
+    "*.scala": "scala"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "extensions.ignoreRecommendations": true,
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hans": true
+  },
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "editor.largeFileOptimizations": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "explorer.confirmDelete": false,
+  "diffEditor.renderSideBySide": true,
+  "workbench.colorCustomizations": {
+    "[Tokyo Night]": {
+      "foreground": "#959cbd",
+      "panelTitle.activeBorder": "#3d59a1",
+      "panelTitle.activeForeground": "#bdc7f0",
+      "panelTitle.inactiveForeground": "#959cbd",
+      "tab.activeForeground": "#bdc7f0",
+      "tab.inactiveForeground": "#959cbd",
+      "breadcrumb.foreground": "#959cbd",
+      "breadcrumb.focusForeground": "#bdc7f0",
+      "breadcrumb.activeSelectionForeground": "#bdc7f0",
+      "statusBar.foreground": "#bdc7f0",
+      "list.focusForeground": "#bdc7f0",
+      "list.hoverForeground": "#bdc7f0",
+      "list.activeSelectionForeground": "#bdc7f0",
+      "list.inactiveSelectionForeground": "#bdc7f0",
+      "list.inactiveSelectionBackground": "#202330",
+      "sideBar.foreground": "#959cbd",
+      "dropdown.foreground": "#959cbd",
+      "menu.foreground": "#bdc7f0",
+      "menubar.selectionForeground": "#bdc7f0",
+      "input.foreground": "#959cbd",
+      "input.placeholderForeground": "#959cbd",
+      "activityBar.foreground": "#bdc7f0",
+      "activityBar.inactiveForeground": "#787c99",
+      "gitDecoration.ignoredResourceForeground": "#696d87",
+      "editorCodeLens.foreground": "#7982a9", // Preferred hex color
+    },
+  },
+  "workbench.colorTheme": "Tokyo Night",
+}
