@@ -102,6 +102,6 @@
       "editorCodeLens.foreground": "#7982a9" // Preferred hex color
     }
   },
-  "workbench.colorTheme": "Tokyo Night",
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.colorTheme": "Tokyo Night"
 }

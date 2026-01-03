@@ -23,7 +23,6 @@ in
       # ai
       github.copilot
       github.copilot-chat
-      Google.gemini-cli-vscode-ide-companion
 
       # lsp
       colejcummins.llvm-syntax-highlighting
