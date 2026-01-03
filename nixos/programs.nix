@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   programs.mtr.enable = true;
   programs.gnupg.agent = {
@@ -15,9 +15,4 @@
 
   # niri
   programs.niri.enable = true;
-
-  # noctalia shell
-  environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
-  ];
 }
