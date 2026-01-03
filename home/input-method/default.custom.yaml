@@ -10,7 +10,7 @@ patch:
     Control_L: noop
     Control_R: noop
     Shift_L: noop
-    Shift_R: commit_text
+    Shift_R: clear
 
   switcher/hotkeys:
     - "F4"
