@@ -22,6 +22,11 @@
 
       # foot
       "inode/directory" = "foot.desktop";
+
+      # vscode
+      "text/plain" = "code.desktop";
+      "application/json" = "code.desktop";
+      "application/yaml" = "code.desktop";
     };
   };
 }
