@@ -23,7 +23,7 @@
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [
-        "p",
+        "p"
       ],
       "after": [
         "p",
@@ -99,8 +99,9 @@
       "activityBar.foreground": "#bdc7f0",
       "activityBar.inactiveForeground": "#787c99",
       "gitDecoration.ignoredResourceForeground": "#696d87",
-      "editorCodeLens.foreground": "#7982a9", // Preferred hex color
-    },
+      "editorCodeLens.foreground": "#7982a9" // Preferred hex color
+    }
   },
   "workbench.colorTheme": "Tokyo Night",
+  "chat.viewSessions.orientation": "stacked"
 }
