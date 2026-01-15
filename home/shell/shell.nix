@@ -21,6 +21,7 @@
     btop
     jq
     wpsoffice-cn
+    eza
 
     # connects
     openvpn
@@ -42,6 +43,11 @@
         ff = "fastfetch";
         win = "sudo grub-reboot 1 && reboot";
         upd = "sudo nixos-rebuild switch --flake ~/nix-config#desktop --impure";
+        ls = "eza --group-directories-first --icons=always --color=auto";
+        ll = "eza --group-directories-first --icons=always --color=auto -lh";
+        la = "eza --group-directories-first --icons=always --color=auto -lha";
+        lt = "eza --group-directories-first --icons=always --color=auto -T";
+        llt = "eza --group-directories-first --icons=always --color=auto -lT";
       };
     };
 
