@@ -1,7 +1,7 @@
 { config, ... }:
 let
-  defaultConfigPath = "${config.home.homeDirectory}/nix-config/home/input-method/default.custom.yaml";
-  wanxiangConfigPath = "${config.home.homeDirectory}/nix-config/home/input-method/wanxiang.custom.yaml";
+  defaultConfigPath = "${config.home.homeDirectory}/nix-config/config/rime-wanxiang/default.custom.yaml";
+  wanxiangConfigPath = "${config.home.homeDirectory}/nix-config/config/rime-wanxiang/wanxiang.custom.yaml";
 in
 {
   xdg.dataFile."fcitx5/rime/default.custom.yaml".source =

@@ -61,10 +61,6 @@
   "editor.unicodeHighlight.allowedLocales": {
     "zh-hans": true
   },
-  "window.menuBarVisibility": "compact",
-  "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
-  "chat.commandCenter.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "editor.largeFileOptimizations": false,
   "github.copilot.nextEditSuggestions.enabled": true,
@@ -110,5 +106,8 @@
   "editor.rulers": [
     { "column": 80, "color": "#352e50"}
   ],
-  "python.terminal.activateEnvInCurrentTerminal": true
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "chat.commandCenter.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false
 }

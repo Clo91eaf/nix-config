@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  configFile = "${config.home.homeDirectory}/nix-config/home/shell/yazi.toml";
+  configFile = "${config.home.homeDirectory}/nix-config/config/yazi/yazi.toml";
 in
 {
   programs.yazi = {

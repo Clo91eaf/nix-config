@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  configFile = "${config.home.homeDirectory}/nix-config/home/shell/swayimg.config";
+  configFile = "${config.home.homeDirectory}/nix-config/config/swayimg/config";
 in
 {
   programs.swayimg.enable = true;

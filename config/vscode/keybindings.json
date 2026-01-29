@@ -277,6 +277,6 @@
     {
         "key": "alt+h",
         "command": "-editor.action.accessibilityHelpOpenHelpLink",
-        "when": "accessibilityHelpIsShown"
+        "when": ""
     }
 ]

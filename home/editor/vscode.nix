@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
-  keybinding = "${config.home.homeDirectory}/nix-config/home/editor/keybindings.json";
-  settings = "${config.home.homeDirectory}/nix-config/home/editor/settings.json";
+  keybinding = "${config.home.homeDirectory}/nix-config/config/vscode/keybindings.json";
+  settings = "${config.home.homeDirectory}/nix-config/config/vscode/settings.json";
 in
 {
   programs.vscode = {
