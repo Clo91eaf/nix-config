@@ -72,7 +72,7 @@
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "terminal.integrated.stickyScroll.enabled": false,
   "explorer.confirmDelete": false,
-  "diffEditor.renderSideBySide": true,
+  "diffEditor.renderSideBySide": false,
   "workbench.colorCustomizations": {
     "[Tokyo Night]": {
       "foreground": "#959cbd",
@@ -102,6 +102,13 @@
       "editorCodeLens.foreground": "#7982a9" // Preferred hex color
     }
   },
+  "workbench.colorTheme": "Tokyo Night",
   "chat.viewSessions.orientation": "stacked",
-  "workbench.colorTheme": "Tokyo Night"
+  "mlir.onSettingsChanged": "restart",
+  "claudeCode.preferredLocation": "panel",
+  "geminicodeassist.project": "mindful-iterator-70cj3",
+  "editor.rulers": [
+    { "column": 80, "color": "#352e50"}
+  ],
+  "python.terminal.activateEnvInCurrentTerminal": true
 }

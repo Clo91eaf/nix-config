@@ -26,6 +26,7 @@
 
       # https://docs.noctalia.dev/getting-started/faq/
       QT_QPA_PLATFORMTHEME = "gtk3";
+      QS_ICON_THEME = "Adwaita";
     };
   };
 }
