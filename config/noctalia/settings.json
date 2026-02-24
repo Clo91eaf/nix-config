@@ -55,9 +55,9 @@
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
-                    "showApplications": false,
+                    "showApplications": true,
                     "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 1
+                    "unfocusedIconsOpacity": 0.6
                 }
             ],
             "left": [
@@ -128,19 +128,6 @@
                 }
             ],
             "right": [
-                {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "iconScale": 1,
-                    "id": "Taskbar",
-                    "maxTaskbarWidth": 40,
-                    "onlyActiveWorkspaces": true,
-                    "onlySameOutput": true,
-                    "showPinnedApps": true,
-                    "showTitle": false,
-                    "smartWidth": true,
-                    "titleWidth": 120
-                },
                 {
                     "blacklist": [
                     ],

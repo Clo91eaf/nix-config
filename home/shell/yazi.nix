@@ -5,6 +5,7 @@ in
 {
   programs.yazi = {
     enable = true;
+    shellWrapperName = "y";
     # settings = {
     #   mgr = {
     #     ratio = [
