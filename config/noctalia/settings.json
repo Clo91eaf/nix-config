@@ -528,7 +528,7 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false
+        "autoUpdate": true
     },
     "sessionMenu": {
         "countdownDuration": 10000,
@@ -637,7 +637,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/Clo91eaf/Pictures/Wallpapers",
+        "directory": "/home/Clo91eaf/Pictures/wallpaper",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

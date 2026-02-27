@@ -1,6 +1,6 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 {
-  home.packages = with pkgs-stable; [
+  home.packages = with pkgs; [
     wechat
   ];
 }
