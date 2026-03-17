@@ -99,7 +99,6 @@
     }
   },
   "workbench.colorTheme": "Tokyo Night",
-  "chat.viewSessions.orientation": "stacked",
   "mlir.onSettingsChanged": "restart",
   "claudeCode.preferredLocation": "panel",
   "geminicodeassist.project": "mindful-iterator-70cj3",
@@ -109,5 +108,14 @@
   "python.terminal.activateEnvInCurrentTerminal": true,
   "chat.commandCenter.enabled": false,
   "workbench.layoutControl.enabled": false,
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "[cpp]": {
+    "editor.wordBasedSuggestions": "off",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.stickyScroll.defaultModel": "foldingProviderModel",
+    "editor.suggest.insertMode": "replace"
+  },
+  "diffEditor.maxComputationTime": 0,
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.selectedModel": "opus[1m]"
 }

@@ -167,7 +167,9 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
-                        "tray-icon tray app"
+                        "tray-icon tray app",
+                        "Telegram Desktop",
+                        "Weixin"
                     ]
                 },
                 {
@@ -193,32 +195,13 @@
                     "textColor": "none"
                 },
                 {
-                    "clockColor": "none",
+                    "clockColor": "primary",
                     "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatHorizontal": "HH:mm | yyyy-MM-dd | dddd",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false
-                },
-                {
-                    "defaultSettings": {
-                        "notes": [
-                        ],
-                        "showCountInBar": true
-                    },
-                    "id": "plugin:simple-notes"
-                },
-                {
-                    "defaultSettings": {
-                        "completedCount": 0,
-                        "count": 0,
-                        "showBackground": true,
-                        "showCompleted": true,
-                        "todos": [
-                        ]
-                    },
-                    "id": "plugin:todo"
                 }
             ]
         }
