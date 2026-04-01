@@ -331,7 +331,7 @@ window-rule {
     // qq/wechat login
     match title="登录"
     // qq record
-    match title="群聊的聊天记录"
+    match title="聊天记录"
 
     open-floating true
 }

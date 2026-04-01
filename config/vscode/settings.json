@@ -117,5 +117,7 @@
   },
   "diffEditor.maxComputationTime": 0,
   "chat.viewSessions.orientation": "stacked",
-  "claudeCode.selectedModel": "opus[1m]"
+  "claudeCode.selectedModel": "opus[1m]",
+  "editor.minimap.enabled": false,
+  "chatgpt.localeOverride": "zh-CN"
 }

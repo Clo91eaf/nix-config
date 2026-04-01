@@ -5,6 +5,7 @@ in
 {
   home.packages = with pkgs; [
     xwayland-satellite
+    nautilus
   ];
 
   # https://nixos-and-flakes.thiscute.world/zh/best-practices/accelerating-dotfiles-debugging

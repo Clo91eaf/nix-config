@@ -105,6 +105,10 @@
         Host 172.24.6.56
         HostName 172.24.6.56
         User clo91eaf
+
+        Host biyun-nixos
+        HostName 172.24.6.40
+        User root
       '';
     };
   };

@@ -19,9 +19,6 @@ in
       cursor = {
         blink = true;
       };
-      colors = {
-        alpha = 0.7;
-      };
     };
   };
 }
