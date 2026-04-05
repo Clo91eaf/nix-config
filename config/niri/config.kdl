@@ -366,6 +366,13 @@ window-rule {
     default-window-height { fixed 600; }
 }
 
+// foot window rule
+window-rule {
+    match app-id="foot"
+
+    open-maximized true
+}
+
 // splayer desktop lyrics
 window-rule {
     match title="SPlayer - 桌面歌词"
@@ -427,7 +434,7 @@ binds {
     Mod+P hotkey-overlay-title="Spawn <u>Config</u>" { spawn-sh "code ~/nix-config/"; }
     Mod+Q hotkey-overlay-title="Close Window" repeat=false { close-window; }
     Mod+S hotkey-overlay-title="Spawn <u>Control</u> Center" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
-    Mod+T hotkey-overlay-title="Spawn <u>Foot</u>" { spawn "foot"; }
+    Mod+T hotkey-overlay-title="Spawn <u>Foot</u>" { spawn "foot" ; }
     Mod+W hotkey-overlay-title="Spawn <u>Foot Float</u>" { spawn "foot" "-a" "float"; }
     Mod+Y hotkey-overlay-title="Spawn <u>Yazi</u>" repeat=false { spawn "foot" "-a" "yazi" "yazi" "~"; }
     Mod+Space hotkey-overlay-title="Spawn <u>Launcher</u>" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
