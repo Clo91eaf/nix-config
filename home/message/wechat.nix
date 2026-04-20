@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # home.packages = with pkgs-stable; [
-  #   wechat
-  # ];
+  home.packages = with pkgs; [
+    wechat
+  ];
 }

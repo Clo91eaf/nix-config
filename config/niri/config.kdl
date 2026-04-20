@@ -332,6 +332,8 @@ window-rule {
     match title="登录"
     // qq record
     match title="聊天记录"
+    // mpv
+    match app-id="mpv"
 
     open-floating true
 }
