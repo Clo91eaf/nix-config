@@ -43,13 +43,5 @@ in
 
     # media player controller daemon
     playerctld.enable = true;
-
-    # audio
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
   };
 }

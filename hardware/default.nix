@@ -11,6 +11,10 @@
     /etc/nixos/hardware-configuration.nix
   ];
 
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0
+  '';
+
   # Bootloader.
   boot.loader = {
     efi = {
