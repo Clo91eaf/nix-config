@@ -16,9 +16,13 @@
       "image/tiff" = "swayimg.desktop";
       "image/webp" = "swayimg.desktop";
 
-      # firefox
-      "text/html" = "firefox.desktop";
-      "application/pdf" = "firefox.desktop";
+      # # firefox
+      # "text/html" = "firefox.desktop";
+      # "application/pdf" = "firefox.desktop";
+
+      # google-chrome
+      "text/html" = "google-chrome.desktop";
+      "application/pdf" = "google-chrome.desktop";
 
       # foot
       "inode/directory" = "foot.desktop";

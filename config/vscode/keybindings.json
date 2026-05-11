@@ -288,9 +288,5 @@
         "key": "ctrl+alt+i",
         "command": "-workbench.panel.chat",
         "when": "workbench.panel.chat.view.copilot.active"
-    },
-    {
-        "key": "ctrl+alt+i",
-        "command": "chatgpt.openSidebar"
     }
 ]

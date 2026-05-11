@@ -119,5 +119,12 @@
   "chat.viewSessions.orientation": "stacked",
   "claudeCode.selectedModel": "opus[1m]",
   "editor.minimap.enabled": false,
-  "chatgpt.localeOverride": "zh-CN"
+  "chatgpt.localeOverride": "zh-CN",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "window.confirmSaveUntitledWorkspace": false
 }
