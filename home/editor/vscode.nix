@@ -8,7 +8,7 @@ in
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       # utilities
-      eamodio.gitlens
+      donjayamanne.githistory
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
 

@@ -47,7 +47,6 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "workbench.startupEditor": "none",
-  "gitlens.launchpad.indicator.enabled": false,
   "update.mode": "none",
   "nix.formatterPath": "nixfmt",
   "editor.tabSize": 2,
@@ -64,8 +63,6 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "editor.largeFileOptimizations": false,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "terminal.integrated.stickyScroll.enabled": false,
   "explorer.confirmDelete": false,
   "diffEditor.renderSideBySide": false,
@@ -103,7 +100,10 @@
   "claudeCode.preferredLocation": "panel",
   "geminicodeassist.project": "mindful-iterator-70cj3",
   "editor.rulers": [
-    { "column": 80, "color": "#352e50"}
+    {
+      "column": 80,
+      "color": "#352e50"
+    }
   ],
   "python.terminal.activateEnvInCurrentTerminal": true,
   "chat.commandCenter.enabled": false,
@@ -125,6 +125,5 @@
     "plaintext": false,
     "markdown": true,
     "scminput": false
-  },
-  "window.confirmSaveUntitledWorkspace": false
+  }
 }
