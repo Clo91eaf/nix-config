@@ -9,7 +9,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +19,6 @@
     inputs@{
       self,
       nixpkgs,
-      nixpkgs-stable,
       home-manager,
       ...
     }:
@@ -33,10 +31,6 @@
 
           specialArgs = {
             inherit username mylib inputs;
-            pkgs-stable = import nixpkgs-stable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
           };
         in
         nixpkgs.lib.nixosSystem {
