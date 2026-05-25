@@ -369,11 +369,24 @@ window-rule {
     default-window-height { fixed 600; }
 }
 
+// nautilus window rule
+window-rule {
+    match app-id="org.gnome.Nautilus"
+
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+
 // foot window rule
 window-rule {
     match app-id="foot"
+    match app-id="dev.zed.Zed"
 
     open-maximized true
+    background-effect {
+        blur true
+    }
 }
 
 // splayer desktop lyrics
@@ -434,7 +447,7 @@ binds {
     // Mod+M hotkey-overlay-title="Media pause/play" { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
     Mod+O hotkey-overlay-title="Spawn <u>Overview</u>" repeat=false { toggle-overview; }
     Mod+E hotkey-overlay-title="Spawn <u>Chrome</u>" repeat=false { spawn "google-chrome"; }
-    Mod+P hotkey-overlay-title="Spawn <u>Config</u>" { spawn-sh "code ~/nix-config/"; }
+    Mod+P hotkey-overlay-title="Spawn <u>Config</u>" { spawn-sh "zeditor ~/nix-config"; }
     Mod+Q hotkey-overlay-title="Close Window" repeat=false { close-window; }
     Mod+S hotkey-overlay-title="Spawn <u>Control</u> Center" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+T hotkey-overlay-title="Spawn <u>Foot</u>" { spawn "foot" ; }

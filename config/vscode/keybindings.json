@@ -288,5 +288,19 @@
         "key": "ctrl+alt+i",
         "command": "-workbench.panel.chat",
         "when": "workbench.panel.chat.view.copilot.active"
+    },
+    {
+        "key": "ctrl+alt+i",
+        "command": "-workbench.action.chat.open",
+        "when": "!chatSetupDisabledInWorkspace && !chatSetupHidden"
+    },
+    {
+        "key": "ctrl+alt+i",
+        "command": "chatgpt.sidebarSecondaryView.focus"
+    },
+    {
+        "key": "x",
+        "command": "workbench.action.closeModalEditor",
+        "when": "editorFocus && editorPartModal"
     }
 ]

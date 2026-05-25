@@ -22,7 +22,6 @@ in
 
       # ai
       github.copilot
-      github.copilot-chat
 
       # lsp
       colejcummins.llvm-syntax-highlighting
