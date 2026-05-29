@@ -217,5 +217,548 @@
     "unbind": {
       "alt-k": "editor::AcceptNextWordEditPrediction"
     }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "space w d": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "space w s": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "space w r": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "space w v": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-g t": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w g t": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-g shift-t": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w g shift-t": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "bindings": {
+      "alt-shift-h": "pane::SplitAndMoveLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-s": "pane::SplitHorizontal"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-s": "pane::SplitHorizontal"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w s": "pane::SplitHorizontal"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-v": "pane::SplitVertical"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w v": "pane::SplitVertical"
+    }
+  },
+  {
+    "bindings": {
+      "alt-shift-l": "pane::SplitAndMoveRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w left": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-h": "workspace::MovePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-left": "workspace::SwapPaneLeft"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-k shift-left": "workspace::SwapPaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w a": "pane::CloseAllItems"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-a": "pane::CloseAllItems"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w c": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-c": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-k": "workspace::MovePaneUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-up": "workspace::SwapPaneUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-down": "workspace::SwapPaneDown"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-j": "workspace::MovePaneDown"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-l": "workspace::MovePaneRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-right": "workspace::SwapPaneRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w up": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "space w k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-w": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w w": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-x": "workspace::SwapPaneAdjacent"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w x": "workspace::SwapPaneAdjacent"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w down": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w right": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-shift-w": "workspace::ActivatePreviousPane"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w shift-w": "workspace::ActivatePreviousPane"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-p": "workspace::ActivatePreviousPane"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w p": "workspace::ActivatePreviousPane"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w o": "workspace::CloseInactiveTabsAndPanes"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-o": "workspace::CloseInactiveTabsAndPanes"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w n": "workspace::NewFileSplitHorizontal"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w ctrl-n": "workspace::NewFileSplitHorizontal"
+    }
+  },
+  {
+    "context": "GitGraph && !GitGraphSearchBar",
+    "unbind": {
+      "ctrl-d": "git_graph::ScrollDown"
+    }
+  },
+  {
+    "context": "MarkdownPreview",
+    "unbind": {
+      "ctrl-d": "markdown::ScrollPageDown"
+    }
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "ctrl-d": "outline_panel::ScrollDown"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "ctrl-d": "project_panel::ScrollDown"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-d": "vim::ScrollDown"
+    }
+  },
+  {
+    "context": "showing_completions",
+    "unbind": {
+      "ctrl-d": "vim::ScrollDown"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w shift-d": "editor::GoToTypeDefinitionSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w g shift-d": "editor::GoToTypeDefinitionSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w space": "editor::OpenExcerptsSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w g space": "editor::OpenExcerptsSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w d": "editor::GoToDefinitionSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w g d": "editor::GoToDefinitionSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w ]": "editor::GoToDefinitionSplit"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w ctrl-]": "editor::GoToDefinitionSplit"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "unbind": {
+      "ctrl-v": [
+        "vim::Literal",
+        [
+          "ctrl-v",
+          "\u0016"
+        ]
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "unbind": {
+      "ctrl-v": [
+        "vim::PushLiteral",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == replace",
+    "unbind": {
+      "ctrl-v": [
+        "vim::PushLiteral",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == waiting",
+    "unbind": {
+      "ctrl-v": [
+        "vim::PushLiteral",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-insert": "editor::Copy"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "unbind": {
+      "ctrl-b": [
+        "vim::Literal",
+        [
+          "ctrl-b",
+          "\u0002"
+        ]
+      ]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-b": "vim::PageUp"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "ctrl-b": [
+        "terminal::SendKeystroke",
+        "ctrl-b"
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == waiting",
+    "unbind": {
+      "ctrl-c": "vim::ClearOperators"
+    }
+  },
+  {
+    "context": "vim_mode == operator",
+    "unbind": {
+      "ctrl-c": "vim::ClearOperators"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "unbind": {
+      "ctrl-c": [
+        "vim::Literal",
+        [
+          "ctrl-c",
+          "\u0003"
+        ]
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "unbind": {
+      "ctrl-c": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "vim_mode == replace",
+    "unbind": {
+      "ctrl-c": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "unbind": {
+      "ctrl-c": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "ctrl-c": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "GitCommit > Editor && VimControl && vim_mode == normal",
+    "unbind": {
+      "ctrl-c": "menu::Cancel"
+    }
+  },
+  {
+    "unbind": {
+      "ctrl-c": "menu::Cancel"
+    }
   }
 ]

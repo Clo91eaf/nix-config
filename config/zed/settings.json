@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "existing_window",
   "active_pane_modifiers": {
     "inactive_opacity": 1.0
   },
@@ -58,6 +59,11 @@
         },
         {
           "paths": [
+            "/home/clo91eaf/Project/rvprobe-workspace"
+          ]
+        },
+        {
+          "paths": [
             "/home/clo91eaf/Project/zaozi"
           ]
         }
@@ -74,6 +80,12 @@
     "dock": "right"
   },
   "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
+      "effort": "high"
+    },
     "play_sound_when_agent_done": "never",
     "sidebar_side": "right",
     "dock": "right",
