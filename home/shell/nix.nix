@@ -4,5 +4,7 @@
     nixfmt
     direnv
     nix-output-monitor
+    nil
+    nixd
   ];
 }
