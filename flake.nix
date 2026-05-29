@@ -13,6 +13,11 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.darwin.follows = "";
+    };
   };
 
   outputs =
@@ -20,6 +25,7 @@
       self,
       nixpkgs,
       home-manager,
+      agenix,
       ...
     }:
     {
@@ -61,6 +67,8 @@
               home-manager.backupFileExtension = "backup";
               home-manager.users.${username} = import ./users/${username}/home.nix; # user-home
             }
+            
+            agenix.nixosModules.default
           ];
         };
     };
