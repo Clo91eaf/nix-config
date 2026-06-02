@@ -9,43 +9,43 @@
 {
   "cli_default_open_behavior": "existing_window",
   "active_pane_modifiers": {
-    "inactive_opacity": 1.0
+    "inactive_opacity": 1.0,
   },
   "diff_view_style": "unified",
   "vim": {
-    "default_mode": "normal"
+    "default_mode": "normal",
   },
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "tab_size": 2,
   "debugger": {
-    "dock": "left"
+    "dock": "left",
   },
   "terminal": {
-    "font_family": "FiraCode Nerd Font"
+    "font_family": "FiraCode Nerd Font",
   },
   "restore_on_startup": "last_workspace",
   "which_key": {
     "delay_ms": 200,
-    "enabled": true
+    "enabled": true,
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "agent_servers": {
     "codex-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "ssh_connections": [
     {
@@ -55,6 +55,11 @@
         {
           "paths": [
             "/home/clo91eaf/Project/circt"
+          ]
+        },
+        {
+          "paths": [
+            "/home/clo91eaf/Project/contract/./"
           ]
         },
         {
@@ -71,29 +76,29 @@
     }
   ],
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-6",
       "enable_thinking": true,
-      "effort": "high"
+      "effort": "high",
     },
     "play_sound_when_agent_done": "never",
     "sidebar_side": "right",
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
@@ -102,7 +107,7 @@
   "theme": {
     "mode": "dark",
     "light": "Tokyo Night Light",
-    "dark": "Catppuccin Mocha (Blur)"
+    "dark": "Catppuccin Mocha (Blur)",
   },
   "inlay_hints": {
     "enabled": true,
@@ -111,37 +116,53 @@
     "show_other_hints": true,
     "show_background": false,
     "edit_debounce_ms": 700,
-    "scroll_debounce_ms": 50
+    "scroll_debounce_ms": 50,
   },
   "lsp": {
+    "tinymist": {
+      "initialization_options": {
+        // Enable background preview
+        // Server will be running on 127.0.0.1:23635
+        "preview": {
+          "background": {
+            "enabled": true,
+          },
+        },
+      },
+
+      "settings": {
+        "exportPdf": "onSave",
+        "outputPath": "$root/$name",
+
+        "formatterMode": "typstyle",
+      },
+    },
     "metals": {
       "binary": {
-        "arguments": [
-          "-Dmetals.http=on"
-        ]
+        "arguments": ["-Dmetals.http=on"],
       },
       "initialization_options": {
-        "isHttpEnabled": true
+        "isHttpEnabled": true,
       },
       "settings": {
         "inlayHints": {
           "inferredTypes": {
-            "enable": true
+            "enable": true,
           },
           "implicitArguments": {
-            "enable": true
+            "enable": true,
           },
           "implicitConversions": {
-            "enable": true
+            "enable": true,
           },
           "typeParameters": {
-            "enable": true
+            "enable": true,
           },
           "hintsInPatternMatch": {
-            "enable": true
-          }
-        }
-      }
-    }
-  }
+            "enable": true,
+          },
+        },
+      },
+    },
+  },
 }

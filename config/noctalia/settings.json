@@ -706,7 +706,7 @@
         "useWallhaven": true,
         "viewMode": "single",
         "wallhavenApiKey": "",
-        "wallhavenCategories": "010",
+        "wallhavenCategories": "100",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
         "wallhavenQuery": "",
