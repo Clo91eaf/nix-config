@@ -22,6 +22,11 @@
     mode = "0400";
   };
 
+  age.secrets.ovpn = {
+    file = ../../secrets/ovpn.age;
+    mode = "0400";
+  };
+
   users.users.Clo91eaf = {
     # Clo91eaf's authorizedKeys
     hashedPasswordFile = config.age.secrets.passwd.path;

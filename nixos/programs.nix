@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.mtr.enable = true;
   programs.gnupg.agent = {

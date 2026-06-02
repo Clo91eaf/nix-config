@@ -1,7 +1,4 @@
-{ username, ... }:
-let
-  openvpnConfigPath = "/etc/openvpn/client/clo91eaf2.conf";
-in
+{ username, config, ... }:
 {
   services = {
     xserver.enable = true;
@@ -19,7 +16,7 @@ in
 
     openvpn.servers = {
       clo91eaf2 = {
-        config = " config ${openvpnConfigPath} ";
+        config = "config ${config.age.secrets.ovpn.path}";
       };
     };
 

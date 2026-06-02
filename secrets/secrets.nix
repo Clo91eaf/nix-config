@@ -11,4 +11,8 @@ in
     user
     system
   ];
+  "ovpn.age".publicKeys = [
+    user
+    system
+  ];
 }
