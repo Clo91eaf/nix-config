@@ -1,14 +1,10 @@
-{ username, config, ... }:
+{ config, ... }:
 {
   services = {
     xserver.enable = true;
 
     displayManager = {
       sddm.enable = true;
-      autoLogin = {
-        enable = true;
-        user = username;
-      };
     };
 
     # backend service of vpn
