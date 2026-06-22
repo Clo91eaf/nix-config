@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "load_direnv": "disabled",
   "cli_default_open_behavior": "existing_window",
   "active_pane_modifiers": {
     "inactive_opacity": 1.0,
@@ -54,12 +55,17 @@
       "projects": [
         {
           "paths": [
-            "/home/clo91eaf/Project/circt"
+            "/home/clo91eaf"
           ]
         },
         {
           "paths": [
-            "/home/clo91eaf/Project/contract/./"
+            "/home/clo91eaf/Project"
+          ]
+        },
+        {
+          "paths": [
+            "/home/clo91eaf/Project/circt"
           ]
         },
         {
@@ -87,9 +93,9 @@
   "agent": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-6",
+      "model": "gpt-5.4",
       "enable_thinking": true,
-      "effort": "high",
+      "effort": "medium",
     },
     "play_sound_when_agent_done": "never",
     "sidebar_side": "right",

@@ -1,17 +1,17 @@
 { pkgs, ... }:
 {
   i18n.inputMethod = {
-    type = "fcitx5";
     enable = true;
+    type = "fcitx5";
     fcitx5 = {
       waylandFrontend = true;
       addons = with pkgs; [
-        fcitx5-gtk
-        fcitx5-material-color
+        fcitx5-fluent
         (fcitx5-rime.override {
           rimeDataPkgs = [
             # see home/misc/rime-wanxiang.nix
-            rime-wanxiang
+            # rime-wanxiang
+            rime-ice
           ];
         })
       ];

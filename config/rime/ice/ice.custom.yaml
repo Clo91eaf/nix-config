@@ -1,0 +1,23 @@
+# ~/.local/share/fcitx5/rime/ice.custom.yaml -> rime_ice/ice.schema.yaml
+
+patch:
+  switches:
+  - name: ascii_mode
+    states: ["中", "Ａ"]
+    reset: 0
+  - name: ascii_punct
+    states: ["¥", "$"]
+    reset: 1
+  - name: traditionalization
+    states: ["简", "繁"]
+    reset: 0
+  - name: emoji
+    states: ["💀", "😄"]
+    reset: 1
+  - name: full_shape
+    states: ["半角", "全角"]
+    reset: 1
+  - abbrev: ["词", "单"]
+    name: search_single_char
+    states: ["正常", "单字"]
+    reset: 0
