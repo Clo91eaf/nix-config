@@ -5,7 +5,7 @@ let
 in
 {
   programs.vscode = {
-    enable = true;
+    enable = false;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       # utilities
       donjayamanne.githistory
@@ -21,10 +21,10 @@ in
       enkia.tokyo-night
 
       # ai
-      github.copilot
+      # github.copilot
 
       # lsp
-      colejcummins.llvm-syntax-highlighting
+      # colejcummins.llvm-syntax-highlighting
       jnoortheen.nix-ide
       mkhl.direnv
     ];
