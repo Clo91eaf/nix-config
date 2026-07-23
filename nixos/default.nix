@@ -8,7 +8,11 @@
   # Enable networking
   networking = {
     hostName = "desktop";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+    wireless.iwd.enable = true;
     firewall.enable = false;
   };
 
