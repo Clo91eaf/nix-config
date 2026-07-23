@@ -4,7 +4,10 @@
     xserver.enable = true;
 
     displayManager = {
-      sddm.enable = true;
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
     };
 
     # backend service of vpn
