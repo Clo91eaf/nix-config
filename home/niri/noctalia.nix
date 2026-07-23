@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   configFile = "${config.home.homeDirectory}/nix-config/config/noctalia/settings.json";
 in
 {
-  home.packages = with pkgs; [
-    noctalia-shell
+  home.packages = [
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # https://nixos-and-flakes.thiscute.world/zh/best-practices/accelerating-dotfiles-debugging
