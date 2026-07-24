@@ -12,7 +12,20 @@
       enable = true;
       wifi.backend = "iwd";
     };
-    wireless.iwd.enable = true;
+    wireless = {
+      enable = false;
+      iwd = {
+        enable = true;
+        settings = {
+          Network = {
+            EnableIPv6 = true;
+          };
+          Settings = {
+            AutoConnect = true;
+          };
+        };
+      };
+    };
     firewall.enable = false;
   };
 
