@@ -43,6 +43,9 @@
     },
   },
   "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
     "codex-acp": {
       "type": "registry",
     },
@@ -59,18 +62,24 @@
         },
         {
           "paths": [
-            "/home/clo91eaf/Project"
-          ]
-        },
-        {
-          "paths": [
-            "/home/clo91eaf/Project/circt",
-            "/home/clo91eaf/Project/rvprobe-workspace"
-          ]
-        },
-        {
-          "paths": [
             "/home/clo91eaf/Project/zaozi"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "172.24.6.39",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/root"
+          ]
+        },
+        {
+          "paths": [
+            "/root/yjh-workspace/zaozi/./"
           ]
         }
       ]
