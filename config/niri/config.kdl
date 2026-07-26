@@ -3,6 +3,8 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+include "noctalia.kdl"
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
@@ -259,7 +261,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 spawn-at-startup "google-chrome"
 spawn-at-startup "Telegram"
 spawn-at-startup "splayer"
@@ -307,7 +309,7 @@ animations {
 // enable rounded corners for all windows
 // https://yalter.github.io/niri/FAQ.html#how-to-enable-rounded-corners-for-all-windows
 window-rule {
-    geometry-corner-radius 6
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -402,6 +404,19 @@ window-rule {
     }
 }
 
+// Noctalia-v5 setting:https://docs.noctalia.dev/v5/compositor-settings/niri/
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
@@ -444,25 +459,17 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Mod+M hotkey-overlay-title="Media pause/play" { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
     Mod+O hotkey-overlay-title="Spawn <u>Overview</u>" repeat=false { toggle-overview; }
     Mod+E hotkey-overlay-title="Spawn <u>Chrome</u>" repeat=false { spawn "google-chrome"; }
     Mod+P hotkey-overlay-title="Spawn <u>Config</u>" { spawn-sh "zeditor ~/nix-config"; }
     Mod+Q hotkey-overlay-title="Close Window" repeat=false { close-window; }
-    Mod+S hotkey-overlay-title="Spawn <u>Control</u> Center" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+T hotkey-overlay-title="Spawn <u>Foot</u>" { spawn "foot" ; }
     Mod+W hotkey-overlay-title="Spawn <u>Foot Float</u>" { spawn "foot" "-a" "float"; }
     Mod+Y hotkey-overlay-title="Spawn <u>Yazi</u>" repeat=false { spawn "foot" "-a" "yazi" "yazi" "~"; }
-    Mod+Space hotkey-overlay-title="Spawn <u>Launcher</u>" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
     // Audio controls
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
 
     // Brightness controls
-    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }

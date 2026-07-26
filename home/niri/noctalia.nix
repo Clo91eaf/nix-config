@@ -1,13 +1,13 @@
-{ config, pkgs, inputs, ... }:
-let
-  configFile = "${config.home.homeDirectory}/nix-config/config/noctalia/settings.json";
-in
+{ inputs, ... }:
 {
-  home.packages = [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+  imports = [
+    inputs.noctalia.homeModules.default
   ];
 
-  # https://nixos-and-flakes.thiscute.world/zh/best-practices/accelerating-dotfiles-debugging
-  # Symlink the external config file into the home manager config
-  xdg.configFile."noctalia/settings.json".source = config.lib.file.mkOutOfStoreSymlink configFile;
+  programs.noctalia = {
+    enable = true;
+    #generate config file
+    #noctalia config export > /home/Clo91eaf/nix-config/config/noctalia/config.toml
+    settings = ../../config/noctalia/config.toml;
+  };
 }

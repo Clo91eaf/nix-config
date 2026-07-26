@@ -1,0 +1,113 @@
+[bar.default]
+background_opacity = 0.19999999552965164
+center = [ "taskbar" ]
+end = [ "tray", "notifications", "clipboard", "volume", "clock", "session" ]
+margin_ends = 0
+radius_top_left = 0
+radius_top_right = 0
+start = [ "control-center", "network", "network_tx", "network_rx", "cpu", "ram", "media" ]
+thickness = 30
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 213.0
+    box_width = 810.0
+    cx = 854.0
+    cy = 769.5
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+        show_session_buttons = true
+
+[shell]
+avatar_path = "/home/Clo91eaf/Pictures/Avatar/.face"
+settings_show_advanced = false
+telemetry_enabled = true
+
+    [shell.screenshot]
+    directory = "/home/Clo91eaf/Pictures/Screenshots"
+    pipe_to_command = true
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[theme]
+builtin = "Catppuccin"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-fruit-salad"
+
+[wallpaper]
+directory = "/home/Clo91eaf/Pictures/wallpaper"
+enabled = true
+
+    [wallpaper.default]
+    path = "/home/Clo91eaf/Pictures/wallpaper/wallhaven_qrm3dl.jpg"
+
+    [wallpaper.last]
+    path = "/home/Clo91eaf/Pictures/wallpaper/wallhaven_qrm3dl.jpg"
+
+[widget.taskbar]
+group_by_workspace = true
+group_single_icon_per_app = true
+
+[widget.workspaces]
+active_pill_size = 1.6500000000000001
+display = "name"
+font_family = "FiraCode Nerd Font"
+max_label_chars = 20
+style = "focus_hint"

@@ -19,7 +19,7 @@
       inputs.darwin.follows = "";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -71,7 +71,7 @@
               home-manager.backupFileExtension = "backup";
               home-manager.users.${username} = import ./users/${username}/home.nix; # user-home
             }
-            
+
             agenix.nixosModules.default
           ];
         };
