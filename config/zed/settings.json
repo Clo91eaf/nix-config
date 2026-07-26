@@ -31,6 +31,7 @@
   },
   "terminal": {
     "font_family": "FiraCode Nerd Font",
+    "font_fallbacks": ["Noto Sans CJK SC", "Noto Sans"],
   },
   "restore_on_startup": "last_workspace",
   "which_key": {
