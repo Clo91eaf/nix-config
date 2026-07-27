@@ -760,5 +760,11 @@
     "unbind": {
       "ctrl-c": "menu::Cancel"
     }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-t": "project_symbols::Toggle"
+    }
   }
 ]
