@@ -49,6 +49,7 @@
     },
     "codex-acp": {
       "default_config_options": {
+        "model": "gpt-5.6-sol",
         "mode": "agent-full-access"
       },
       "type": "registry",
@@ -79,6 +80,11 @@
         {
           "paths": [
             "/root"
+          ]
+        },
+        {
+          "paths": [
+            "/root/yjh-workspace/circt-nix"
           ]
         },
         {

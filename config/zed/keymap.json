@@ -766,5 +766,11 @@
     "unbind": {
       "ctrl-t": "project_symbols::Toggle"
     }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-shift-x": "zed::Extensions"
+    }
   }
 ]
