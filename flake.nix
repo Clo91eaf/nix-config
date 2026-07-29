@@ -9,6 +9,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +33,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       agenix,
       ...
@@ -77,6 +79,16 @@
             }
 
             agenix.nixosModules.default
+
+            # overlay for niri
+            # https://github.com/NixOS/nixpkgs/pull/546004
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  niri = nixpkgs-unstable.legacyPackages.${final.stdenv.hostPlatform.system}.niri;
+                })
+              ];
+            }
           ];
         };
     };
