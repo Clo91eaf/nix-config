@@ -10,9 +10,6 @@
       };
     };
 
-    # backend service of vpn
-    mihomo.tunMode = true;
-
     openvpn.servers = {
       clo91eaf2 = {
         config = "config ${config.age.secrets.ovpn.path}";
