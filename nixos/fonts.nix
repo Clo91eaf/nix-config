@@ -11,6 +11,9 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
 
+      # chinese fonts
+      lxgw-wenkai
+
       # program fonts
       nerd-fonts.fira-code
       nerd-fonts.symbols-only
