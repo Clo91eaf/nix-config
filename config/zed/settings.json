@@ -9,7 +9,7 @@
 {
   "cli_default_open_behavior": "existing_window",
   "active_pane_modifiers": {
-    "inactive_opacity": 1.0,
+    "inactive_opacity": 0.7
   },
   "diff_view_style": "unified",
   "vim": {
@@ -23,7 +23,7 @@
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)",
+    "dark": "Catppuccin Mocha",
   },
   "tab_size": 2,
   "debugger": {
@@ -31,7 +31,7 @@
   },
   "terminal": {
     "font_family": "FiraCode Nerd Font",
-    "font_fallbacks": ["Noto Sans CJK SC", "Noto Sans"],
+    "font_fallbacks": ["Noto Sans Mono CJK SC", "Noto Sans CJK SC"],
   },
   "restore_on_startup": "last_workspace",
   "which_key": {
@@ -49,6 +49,7 @@
     },
     "codex-acp": {
       "default_config_options": {
+        "fast-mode": true,
         "model": "gpt-5.6-sol",
         "mode": "agent-full-access"
       },
@@ -105,11 +106,12 @@
     "dock": "right",
   },
   "agent": {
+    "thinking_display": "always_collapsed",
     "default_model": {
       "provider": "zed.dev",
-      "model": "gpt-5.4",
+      "model": "claude-sonnet-5",
       "enable_thinking": true,
-      "effort": "medium",
+      "effort": "high",
     },
     "play_sound_when_agent_done": "never",
     "sidebar_side": "right",
@@ -118,6 +120,7 @@
     "model_parameters": [],
   },
   "git_panel": {
+    "tree_view": true,
     "dock": "left",
   },
   "base_keymap": "VSCode",

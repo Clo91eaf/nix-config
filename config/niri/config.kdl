@@ -308,20 +308,9 @@ animations {
 // enable rounded corners for all windows
 // https://yalter.github.io/niri/FAQ.html#how-to-enable-rounded-corners-for-all-windows
 window-rule {
+    open-maximized true
     geometry-corner-radius 10
     clip-to-geometry true
-}
-
-// Open as full width
-window-rule {
-    match app-id="firefox"
-    match app-id="google-chrome"
-    match app-id="org.telegram.desktop"
-    match app-id="qq"
-    match app-id="code"
-    match app-id="dev.zed.Zed"
-
-    open-maximized true
 }
 
 // Open as floating by default.
@@ -330,14 +319,17 @@ window-rule {
     match app-id="satty"
     // qq picture viewer
     match title="图片查看器"
-    // qq/wechat login
-    match title="登录"
+    // qq video viewer
+    match title="视频播放器"
     // qq record
     match title="聊天记录"
     // mpv
     match app-id="mpv"
 
     open-floating true
+    open-fullscreen false
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
 }
 
 // telegram
