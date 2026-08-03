@@ -107,7 +107,54 @@
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
+        "scala3-bsp-semantic-ls-zed": "scala3-bsp-semantic-ls-zed",
+        "zed-extensions": "zed-extensions",
+        "zed-nixpkgs": "zed-nixpkgs",
         "zen-browser": "zen-browser"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "zed-extensions",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785562362,
+        "narHash": "sha256-J15aBa3d6B1SUUAQydQ06wFjPzrrcVceb6jkdfwfGls=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "5f29c219a7655519f8a9f8c6968064b82c17cc93",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "scala3-bsp-semantic-ls-zed": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "zed-extensions": [
+          "zed-extensions"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785745548,
+        "narHash": "sha256-lPnv5S88gvyIHq9Nvf/Un8xdhga6Wld+jUVndMnR2sA=",
+        "owner": "xinpian-tech",
+        "repo": "scala3-bsp-semantic-ls-zed",
+        "rev": "d7ebd3c8d0ec3c0d1a63e57d8ce14ed4f4f036be",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xinpian-tech",
+        "repo": "scala3-bsp-semantic-ls-zed",
+        "type": "github"
       }
     },
     "systems": {
@@ -122,6 +169,43 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zed-extensions": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1785689518,
+        "narHash": "sha256-e/qAkWM76mFcm3ddUg5Y+W1XibD8g7CcArXSy/SLTR4=",
+        "owner": "DuskSystems",
+        "repo": "nix-zed-extensions",
+        "rev": "a9b5d4350e293381ebe415d00096879d331ff540",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DuskSystems",
+        "repo": "nix-zed-extensions",
+        "type": "github"
+      }
+    },
+    "zed-nixpkgs": {
+      "locked": {
+        "lastModified": 1785318670,
+        "narHash": "sha256-dN6Ou5x/+23FZLEpYP3IffO+NyJFzUlGumt1uu3MMaY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0954f7ee2f6bb3dc7d4e3d0d8bcb8fd4bde4cfc5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0954f7ee2f6bb3dc7d4e3d0d8bcb8fd4bde4cfc5",
         "type": "github"
       }
     },
