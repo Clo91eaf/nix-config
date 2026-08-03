@@ -9,6 +9,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Zed is pinned to the nixpkgs revision whose zed-editor is 1.12.0, because
+    # the patches in home/editor/ are audited against that version. Everything
+    # else keeps following `nixpkgs` (unstable). Bump this revision deliberately
+    # when you want a newer Zed (and re-audit the patches).
+    zed-nixpkgs.url = "github:NixOS/nixpkgs/0954f7ee2f6bb3dc7d4e3d0d8bcb8fd4bde4cfc5";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +30,15 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zed-extensions = {
+      url = "github:DuskSystems/nix-zed-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    scala3-bsp-semantic-ls-zed = {
+      url = "github:xinpian-tech/scala3-bsp-semantic-ls-zed";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.zed-extensions.follows = "zed-extensions";
     };
   };
 
