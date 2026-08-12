@@ -27,10 +27,6 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zed-extensions = {
       url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -106,7 +106,6 @@ group_single_icon_per_app = true
 
 [widget.workspaces]
 active_pill_size = 1.6500000000000001
-label_source = "name"
 font_family = "FiraCode Nerd Font"
 max_label_chars = 20
 style = "focus_hint"

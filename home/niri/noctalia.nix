@@ -1,13 +1,11 @@
-{ inputs, ... }:
+{ config, pkgs, ... }:
+let
+  configFile = "${config.home.homeDirectory}/nix-config/config/noctalia/config.toml";
+in
 {
-  imports = [
-    inputs.noctalia.homeModules.default
+  home.packages = with pkgs; [
+    noctalia
   ];
 
-  programs.noctalia = {
-    enable = true;
-    #generate config file
-    #noctalia config export > /home/Clo91eaf/nix-config/config/noctalia/config.toml
-    settings = ../../config/noctalia/config.toml;
-  };
+  xdg.configFile."noctalia/config.toml".source = config.lib.file.mkOutOfStoreSymlink configFile;
 }
