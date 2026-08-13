@@ -30,10 +30,35 @@ let
     unprocessedRemoteServer = unprocessedZedRemoteServer;
   };
 
+  # Zed 1.12.0 classifies symlinked extensions as development extensions
+  # unless a `.zed-extension-checksum` receipt is present. Write that receipt
+  # in postInstall so the packaged extensions we symlink into place are
+  # recognized as packaged, not dev.
+  withExtensionChecksum =
+    extension:
+    extension.overrideAttrs (oldAttrs: {
+      postInstall = (oldAttrs.postInstall or "") + ''
+        for extension_dir in "$out"/share/zed/extensions/*; do
+          if [ -d "$extension_dir" ]; then
+            (
+              set -o pipefail
+              cd "$extension_dir"
+              find . \( -type f -o -type l \) ! -name .zed-extension-checksum -print0 \
+                | LC_ALL=C sort -z \
+                | xargs -0 sha256sum \
+                | sha256sum \
+                | cut -d ' ' -f 1 > .zed-extension-checksum
+            )
+          fi
+        done
+      '';
+    });
+
   zed-editor = unpatchedZedEditor.overrideAttrs (oldAttrs: {
     patches = (oldAttrs.patches or [ ]) ++ [
       ./zed-no-automatic-downloads.patch
       ./zed-local-remote-server.patch
+      ./zed-extension-checksums.patch
     ];
 
     env = (oldAttrs.env or { }) // {
@@ -52,14 +77,18 @@ in
 
   programs.zed-editor-extensions = {
     enable = true;
-    packages = with zedExtPkgs.zed-extensions; [
-        catppuccin-blur
-        catppuccin-icons
-        git-firefly
-        nix
-        toml
-      ] ++ [
-        inputs.scala3-bsp-semantic-ls-zed.packages.${pkgs.stdenv.hostPlatform.system}.default
+    packages =
+      map withExtensionChecksum (
+        with zedExtPkgs.zed-extensions; [
+          catppuccin-blur
+          catppuccin-icons
+          git-firefly
+          nix
+          toml
+        ]
+      )
+      ++ [
+        (withExtensionChecksum inputs.scala3-bsp-semantic-ls-zed.packages.${pkgs.stdenv.hostPlatform.system}.default)
       ];
   };
 

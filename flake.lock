@@ -353,15 +353,15 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1786510015,
-        "narHash": "sha256-qBVO5t84pScz3xew8q4jj0FNBr49Z4X97LKQhjdKidc=",
-        "owner": "DuskSystems",
+        "lastModified": 1786534420,
+        "narHash": "sha256-XLFJfkg/itTToxvJeKR6HVwy9FEN1TFJ7RMJthHyr90=",
+        "owner": "SwornSystems",
         "repo": "nix-zed-extensions",
-        "rev": "d33f9f6c2c52b450a5f7667c5886034b8a1e5e82",
+        "rev": "13a63a7fb0218846cbf97519faa76b5cce842f88",
         "type": "github"
       },
       "original": {
-        "owner": "DuskSystems",
+        "owner": "SwornSystems",
         "repo": "nix-zed-extensions",
         "type": "github"
       }
