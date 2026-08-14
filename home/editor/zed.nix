@@ -55,10 +55,22 @@ let
     });
 
   zed-editor = unpatchedZedEditor.overrideAttrs (oldAttrs: {
+    # The agent-notify patch changes Cargo.lock, so the vendored dependency
+    # set must be built from the patched source as well (overrideAttrs cannot
+    # reach the internal `cargoPatches` mechanism). hash is filled in from the
+    # first build's report.
+    cargoDeps = zedNixpkgs.rustPlatform.fetchCargoVendor {
+      name = "zed-editor-1.12.0-vendor";
+      src = unpatchedZedEditor.src;
+      patches = [ ./zed-agent-desktop-notifications.patch ];
+      hash = "sha256-oZIp2//nT38hPRyA9jVieNbpGp/qFnAXgBy0LH+uffM=";
+    };
+
     patches = (oldAttrs.patches or [ ]) ++ [
       ./zed-no-automatic-downloads.patch
       ./zed-local-remote-server.patch
       ./zed-extension-checksums.patch
+      ./zed-agent-desktop-notifications.patch
     ];
 
     env = (oldAttrs.env or { }) // {

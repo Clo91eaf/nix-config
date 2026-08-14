@@ -1,0 +1,126 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 79664e0..4eddd72 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -559,6 +559,7 @@ dependencies = [
+  "vim",
+  "watch",
+  "workspace",
++ "zbus",
+  "zed_actions",
+ ]
+ 
+diff --git a/crates/agent_ui/Cargo.toml b/crates/agent_ui/Cargo.toml
+index bfabeac..367a0b5 100644
+--- a/crates/agent_ui/Cargo.toml
++++ b/crates/agent_ui/Cargo.toml
+@@ -116,6 +116,7 @@ uuid.workspace = true
+ watch.workspace = true
+ workspace.workspace = true
+ zed_actions.workspace = true
++zbus = "5.13"
+ image.workspace = true
+ reqwest_client = { workspace = true, optional = true }
+ 
+diff --git a/crates/agent_ui/src/conversation_view.rs b/crates/agent_ui/src/conversation_view.rs
+index baae526..5ad1ff6 100644
+--- a/crates/agent_ui/src/conversation_view.rs
++++ b/crates/agent_ui/src/conversation_view.rs
+@@ -105,6 +105,41 @@ use crate::{
+ const STOPWATCH_THRESHOLD: Duration = Duration::from_secs(30);
+ const TOKEN_THRESHOLD: u64 = 250;
+ 
++// Agent notifications are sent as XDG desktop notifications
++// (org.freedesktop.Notifications), which the user's notification daemon (e.g.
++// noctalia) displays. The in-app pop-up window is not used.
++#[zbus::proxy(
++    interface = "org.freedesktop.Notifications",
++    default_service = "org.freedesktop.Notifications",
++    default_path = "/org/freedesktop/Notifications"
++)]
++trait DesktopNotifications {
++    fn notify(
++        &self,
++        app_name: &str,
++        replaces_id: u32,
++        app_icon: &str,
++        summary: &str,
++        body: &str,
++        actions: &[&str],
++        hints: &std::collections::HashMap<&str, zbus::zvariant::Value<'_>>,
++        expire_timeout: i32,
++    ) -> zbus::Result<u32>;
++}
++
++async fn send_desktop_notification(summary: &str, body: &str) {
++    let Ok(connection) = zbus::Connection::session().await else {
++        return;
++    };
++    let Ok(proxy) = DesktopNotificationsProxy::new(&connection).await else {
++        return;
++    };
++    let hints = std::collections::HashMap::<&str, zbus::zvariant::Value<'_>>::new();
++    let _ = proxy
++        .notify("Zed", 0, "", summary, body, &[], &hints, 5000)
++        .await;
++}
++
+ pub(crate) const DRAFT_PROMPT_PERSIST_DEBOUNCE: Duration = Duration::from_millis(250);
+ 
+ pub(crate) mod elicitation;
+@@ -2850,47 +2885,20 @@ impl ConversationView {
+             return;
+         };
+         let root_thread = root_thread.read(cx).thread.read(cx);
+-        let root_thread_id = self.thread_id;
+-        let root_work_dirs = root_thread.work_dirs().cloned();
+-        let root_title = root_thread.title();
+ 
+-        let title = root_title
+-            .clone()
++        let title = root_thread
++            .title()
+             .unwrap_or_else(|| self.agent.agent_id().0);
+ 
+         match settings.notify_when_agent_waiting {
+-            NotifyWhenAgentWaiting::PrimaryScreen => {
+-                window.request_attention();
+-                if let Some(primary) = cx.primary_display() {
+-                    self.pop_up(
+-                        icon,
+-                        caption.into(),
+-                        title,
+-                        root_thread_id,
+-                        root_work_dirs,
+-                        root_title,
+-                        window,
+-                        primary,
+-                        cx,
+-                    );
+-                }
+-            }
+-            NotifyWhenAgentWaiting::AllScreens => {
++            NotifyWhenAgentWaiting::PrimaryScreen | NotifyWhenAgentWaiting::AllScreens => {
+                 window.request_attention();
++                let title = title.clone();
+                 let caption = caption.into();
+-                for screen in cx.displays() {
+-                    self.pop_up(
+-                        icon,
+-                        caption.clone(),
+-                        title.clone(),
+-                        root_thread_id,
+-                        root_work_dirs.clone(),
+-                        root_title.clone(),
+-                        window,
+-                        screen,
+-                        cx,
+-                    );
+-                }
++                cx.background_spawn(async move {
++                    send_desktop_notification(&title, &caption).await;
++                })
++                .detach();
+             }
+             NotifyWhenAgentWaiting::Never => {
+                 // Don't show anything
