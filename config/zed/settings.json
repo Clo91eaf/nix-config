@@ -33,7 +33,7 @@
   "terminal": {
     "cursor_shape": "bar",
     "font_family": "FiraCode Nerd Font",
-    "font_fallbacks": ["Noto Sans Mono CJK SC", "Noto Sans CJK SC"],
+    "font_fallbacks": ["MiSans", "Noto Sans Mono CJK SC", "Noto Sans CJK SC"],
   },
   "restore_on_startup": "last_workspace",
   "which_key": {
@@ -135,6 +135,8 @@
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
+  "buffer_font_fallbacks": ["MiSans", "Noto Sans CJK SC"],
+  "ui_font_fallbacks": ["MiSans", "Noto Sans CJK SC"],
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
