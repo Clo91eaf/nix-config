@@ -1,7 +1,7 @@
 { config, ... }:
 let
   defaultConfigPath = "${config.home.homeDirectory}/nix-config/config/rime/ice/default.custom.yaml";
-  iceConfigPath = "${config.home.homeDirectory}/nix-config/config/rime/wanxiang/ice.custom.yaml";
+  iceConfigPath = "${config.home.homeDirectory}/nix-config/config/rime/ice/ice.custom.yaml";
 in
 {
   xdg.dataFile."fcitx5/rime/default.custom.yaml".source = config.lib.file.mkOutOfStoreSymlink defaultConfigPath;

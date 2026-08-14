@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # system
-    grub2
-
     # fetch
     wget
     curl

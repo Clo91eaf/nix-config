@@ -9,7 +9,7 @@
         fcitx5-fluent
         (fcitx5-rime.override {
           rimeDataPkgs = [
-            # see home/misc/rime-wanxiang.nix
+            # see home/input-method/rime-wanxiang.nix
             # rime-wanxiang
             rime-ice
           ];

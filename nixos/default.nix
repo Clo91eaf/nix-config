@@ -12,21 +12,11 @@
       enable = true;
       wifi.backend = "iwd";
     };
-    wireless = {
-      enable = false;
-      iwd = {
-        enable = true;
-        settings = {
-          Network = {
-            EnableIPv6 = true;
-          };
-          Settings = {
-            AutoConnect = true;
-          };
-        };
-      };
+    # Only SSH is exposed; loopback services (QQ, clash, etc.) are unaffected.
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 22 ];
     };
-    firewall.enable = false;
   };
 
   environment = {

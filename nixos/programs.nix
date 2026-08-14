@@ -1,5 +1,6 @@
 { ... }:
 {
+  programs.ssh.enableAskPassword = false;
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;

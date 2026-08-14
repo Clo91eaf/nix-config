@@ -34,6 +34,9 @@
     options = "--delete-older-than 30d";
   };
 
+  # Hardlink identical files (btrfs-friendly) periodically to save space.
+  nix.optimise.automatic = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }

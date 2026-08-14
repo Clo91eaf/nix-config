@@ -31,6 +31,7 @@
     "dock": "left",
   },
   "terminal": {
+    "cursor_shape": "bar",
     "font_family": "FiraCode Nerd Font",
     "font_fallbacks": ["Noto Sans Mono CJK SC", "Noto Sans CJK SC"],
   },
