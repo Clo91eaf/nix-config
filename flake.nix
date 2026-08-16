@@ -46,35 +46,33 @@
       agenix,
       ...
     }:
+    let
+      username = "Clo91eaf";
+      hostname = "desktop";
+
+      mylib = import ./mylib/utils.nix { inherit (nixpkgs) lib; };
+
+      specialArgs = {
+        inherit username hostname mylib inputs;
+      };
+
+    in
     {
-      nixosConfigurations.desktop =
-        let
-          username = "Clo91eaf";
-
-          mylib = import ./mylib/utils.nix { inherit (nixpkgs) lib; };
-
-          specialArgs = {
-            inherit username mylib inputs;
-          };
-        in
+      nixosConfigurations.${hostname} =
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
 
           # module organization of the configuration files
           # nix-config
-          # +-- hardware
-          # +-- software
-          #     +-- nixos <----------+
-          #     +-- home <-----------+-+
-          #     +-- users<username>  | |
-          #         +-- nixos  ------+ |
-          #         +-- home ----------+
-
+          # +-- hosts/<hostname>   machine-specific (hardware + host settings)
+          # +-- nixos              generic system modules
+          # +-- home               home-manager modules
+          # +-- users/<username>   per-user nixos + home entrypoints
           modules = [
-            ./hardware # hardware
+            ./hosts/${hostname}
 
-            ./users/${username}/nixos.nix # user-nixos
+            ./users/${username}/nixos.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -83,7 +81,7 @@
 
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./users/${username}/home.nix; # user-home
+              home-manager.users.${username} = import ./users/${username}/home.nix;
             }
 
             agenix.nixosModules.default

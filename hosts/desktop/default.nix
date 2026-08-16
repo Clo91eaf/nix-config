@@ -1,15 +1,16 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# Host-specific configuration for "desktop".
 {
   config,
   pkgs,
+  hostname,
   ...
 }:
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
+
+  networking.hostName = hostname;
 
   boot.extraModprobeConfig = ''
     options snd_hda_intel power_save=0

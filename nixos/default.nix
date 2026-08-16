@@ -7,7 +7,6 @@
 
   # Enable networking
   networking = {
-    hostName = "desktop";
     networkmanager = {
       enable = true;
       wifi.backend = "iwd";
