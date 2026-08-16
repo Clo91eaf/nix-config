@@ -3,8 +3,8 @@
   home.packages = with pkgs; [
     nixfmt
     direnv
-    nix-output-monitor
     nil
     nixd
+    nh
   ];
 }
