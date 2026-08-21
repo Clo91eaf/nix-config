@@ -1,5 +1,15 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
+  environment.systemPackages = [(
+    pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+      font  = "Noto Sans";
+      fontSize = "21";
+      loginBackground = true;
+    }
+  )];
+
   services = {
     xserver.enable = true;
 
@@ -7,6 +17,7 @@
       sddm = {
         enable = true;
         wayland.enable = true;
+        theme = "catppuccin-mocha-mauve";
       };
     };
 
