@@ -58,3 +58,21 @@ blur {
   noise 0.03      // grain overlay (default: 0.02)
   saturation 1.0  // color saturation boost (default: 1.5)
 }
+
+// Place the regular wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-wallpaper"
+  place-within-backdrop true
+}
+
+// Set transparent workspace background color so the backdrop is visible at all times.
+layout {
+  background-color "transparent"
+}
+
+// Optionally, disable workspace shadows in the overview.
+overview {
+  workspace-shadow {
+    off
+  }
+}

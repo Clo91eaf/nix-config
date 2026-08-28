@@ -46,16 +46,11 @@
     },
   },
   "agent_servers": {
-    "claude-acp": {
+    "codex-acp": {
       "type": "registry"
     },
-    "codex-acp": {
-      "default_config_options": {
-        "fast-mode": true,
-        "model": "gpt-5.6-sol",
-        "mode": "agent-full-access"
-      },
-      "type": "registry",
+    "claude-acp": {
+      "type": "registry"
     },
   },
   "ssh_connections": [
@@ -65,12 +60,22 @@
       "projects": [
         {
           "paths": [
+            "/home/clo91eaf/Project/circt-upstream"
+          ]
+        },
+        {
+          "paths": [
             "/home/clo91eaf/Project/scala3-bsp-semantic-ls"
           ]
         },
         {
           "paths": [
             "/home/clo91eaf/Project/zaozi"
+          ]
+        },
+        {
+          "paths": [
+            "/tmp/ut"
           ]
         }
       ]
