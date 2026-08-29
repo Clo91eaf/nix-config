@@ -36,13 +36,13 @@
       "x-scheme-handler/about" = "zen.desktop";
       "x-scheme-handler/unknown" = "zen.desktop";
 
-      # foot
-      "inode/directory" = "foot.desktop";
+      # kitty
+      "inode/directory" = "kitty.desktop";
 
-      # vscode
-      "text/plain" = "code.desktop";
-      "application/json" = "code.desktop";
-      "application/yaml" = "code.desktop";
+      # zed
+      "text/plain" = "dev.zed.Zed.desktop";
+      "application/json" = "dev.zed.Zed.desktop";
+      "application/yaml" = "dev.zed.Zed.desktop";
     };
   };
 }

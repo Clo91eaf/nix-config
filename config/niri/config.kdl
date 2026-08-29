@@ -351,9 +351,9 @@ window-rule {
     default-window-height { fixed 600; }
 }
 
-// foot float
+// kitty float
 window-rule {
-    // foot -a float
+    // kitty --class float
     match app-id="float"
 
     open-floating true
@@ -379,9 +379,9 @@ window-rule {
     default-window-height { fixed 600; }
 }
 
-// foot window rule
+// kitty + zed window rule
 window-rule {
-    match app-id="foot"
+    match app-id="kitty"
     match app-id="dev.zed.Zed"
 
     open-maximized true
@@ -462,9 +462,9 @@ binds {
     Mod+E hotkey-overlay-title="Spawn <u>Zen Browser</u>" repeat=false { spawn "zen"; }
     Mod+P hotkey-overlay-title="Spawn <u>Config</u>" { spawn-sh "zeditor ~/nix-config"; }
     Mod+Q hotkey-overlay-title="Close Window" repeat=false { close-window; }
-    Mod+T hotkey-overlay-title="Spawn <u>Foot</u>" { spawn "foot" ; }
-    Mod+W hotkey-overlay-title="Spawn <u>Foot Float</u>" { spawn "foot" "-a" "float"; }
-    Mod+Y hotkey-overlay-title="Spawn <u>Yazi</u>" repeat=false { spawn "foot" "-a" "yazi" "yazi" "~"; }
+    Mod+T hotkey-overlay-title="Spawn <u>Kitty</u>" { spawn "kitty"; }
+    Mod+W hotkey-overlay-title="Spawn <u>Kitty Float</u>" { spawn "kitty" "--class" "float"; }
+    Mod+Y hotkey-overlay-title="Spawn <u>Yazi</u>" repeat=false { spawn "kitty" "--class" "yazi" "yazi" "~"; }
 
     // Audio controls
 
