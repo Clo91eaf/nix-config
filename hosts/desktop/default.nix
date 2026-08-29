@@ -95,8 +95,6 @@
     };
   };
 
-  nixpkgs.config.cudaSupport = true;
-
   # blue tooth
   hardware.bluetooth = {
     enable = true;

@@ -1,15 +1,11 @@
-{ ... }:
+{ config, pkgs, ... }:
+let
+  configFile = "${config.home.homeDirectory}/nix-config/config/kitty/kitty.conf";
+in
 {
-  programs.kitty = {
-    enable = true;
-    theme = "Tokyo Night";
-    settings = {
-      font_family = "FiraCode Nerd Font";
-      font_size = 12;
-      mouse_hide_wait = 3;
-      hide_window_decorations = "yes";
-      cursor_blink_interval = 0.5;
-      cursor_stop_blinking_after = 0;
-    };
-  };
+  home.packages = with pkgs; [
+    kitty
+  ];
+  
+  xdg.configFile."kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink configFile;
 }

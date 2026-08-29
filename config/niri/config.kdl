@@ -361,15 +361,6 @@ window-rule {
     default-window-height { fixed 800; }
 }
 
-// yazi window rule
-window-rule {
-    match app-id="yazi"
-
-    open-floating true
-    default-column-width { fixed 800; }
-    default-window-height { fixed 600; }
-}
-
 // nautilus window rule
 window-rule {
     match app-id="org.gnome.Nautilus"
