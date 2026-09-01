@@ -17,6 +17,10 @@
   '';
 
   # Bootloader.
+  environment.systemPackages = with pkgs; [
+    grub2
+  ];
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
