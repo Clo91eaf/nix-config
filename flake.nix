@@ -1,10 +1,10 @@
 {
   description = "NixOS configuration of Clo91eaf";
 
-  # the nixConfig here only affects the flake itself, not the system configuration!
+  # vinput cache
   nixConfig = {
-    # substituers will be appended to the default substituters when fetching packages
-    extra-substituters = [ "https://nix-community.cachix.org" ];
+    extra-substituters = [ "https://fcitx5-vinput.cachix.org" ];
+    extra-trusted-public-keys = [ "fcitx5-vinput.cachix.org-1:XpX3AA6+dDIX4qJhb1QM7sbTwX6/qSlGvW8Z5NK6XdU=" ];
   };
 
   inputs = {
@@ -35,6 +35,10 @@
       url = "github:xinpian-tech/scala3-bsp-semantic-ls-zed";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.zed-extensions.follows = "zed-extensions";
+    };
+    fcitx5-vinput = {
+      url = "github:xifan2333/fcitx5-vinput";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

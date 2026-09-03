@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  fcitx5-vinput = inputs.fcitx5-vinput.packages."${pkgs.stdenv.hostPlatform.system}".default;
+in
 {
   i18n.inputMethod = {
     enable = true;
@@ -7,6 +10,7 @@
       waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-fluent
+        fcitx5-vinput
         (fcitx5-rime.override {
           rimeDataPkgs = [
             # see home/input-method/rime-wanxiang.nix
