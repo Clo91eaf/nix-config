@@ -48,8 +48,10 @@
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
+        "reasoning_effort": "medium",
+        "mode": "agent-full-access",
         "fast-mode": true,
-        "mode": "agent-full-access"
+        "model": "gpt-6-astra"
       },
       "type": "registry"
     }
@@ -61,7 +63,17 @@
       "projects": [
         {
           "paths": [
+            "/home/clo91eaf/Project/T1"
+          ]
+        },
+        {
+          "paths": [
             "/home/clo91eaf/Project/circt-upstream"
+          ]
+        },
+        {
+          "paths": [
+            "/home/clo91eaf/Project/dwbb-zaozi"
           ]
         },
         {
@@ -93,12 +105,27 @@
         },
         {
           "paths": [
+            "/root/yjh-workspace"
+          ]
+        },
+        {
+          "paths": [
             "/root/yjh-workspace/circt-nix"
           ]
         },
         {
           "paths": [
             "/root/yjh-workspace/circt/./"
+          ]
+        },
+        {
+          "paths": [
+            "/root/yjh-workspace/rvprobe-workspace/./"
+          ]
+        },
+        {
+          "paths": [
+            "/root/yjh-workspace/rvprobe-workspace/zaozi"
           ]
         },
         {
