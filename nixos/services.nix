@@ -33,9 +33,6 @@
       KbdInteractiveAuthentication = false;
     };
 
-    # Keep the journal from eating disk space.
-    journald.extraConfig = "SystemMaxUse=500M";
-
     keyd = {
       enable = true;
       keyboards = {
