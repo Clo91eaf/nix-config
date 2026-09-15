@@ -18,7 +18,7 @@
       inputs.darwin.follows = "";
     };
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:youwen5/zen-browser-flake/pull/20/head"; #https://github.com/youwen5/zen-browser-flake/pull/20
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zed-extensions = {
@@ -29,10 +29,6 @@
       url = "github:xinpian-tech/scala3-bsp-semantic-ls-zed";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.zed-extensions.follows = "zed-extensions";
-    };
-    fcitx5-vinput = {
-      url = "github:xifan2333/fcitx5-vinput";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
