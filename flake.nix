@@ -15,7 +15,6 @@
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.darwin.follows = "";
     };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake/pull/20/head"; #https://github.com/youwen5/zen-browser-flake/pull/20
