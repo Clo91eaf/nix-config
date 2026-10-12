@@ -146,6 +146,9 @@
     "dock": "right",
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
     "enable_feedback": false,
     "expand_edit_card": false,
     "expand_terminal_card": false,
@@ -157,7 +160,6 @@
       "effort": "high",
     },
     "play_sound_when_agent_done": "never",
-    "sidebar_side": "right",
     "dock": "right",
     "favorite_models": [],
     "model_parameters": [],
