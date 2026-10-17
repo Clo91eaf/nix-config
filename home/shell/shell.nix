@@ -12,7 +12,6 @@
 
     # utils
     ripgrep
-    ttyper
 
     btop
     jq

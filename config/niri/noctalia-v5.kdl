@@ -7,6 +7,12 @@ binds {
     // Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
     // Niri has a built-in window switcher you might want to try it to see which one you prefer.
     Mod+Shift+N { spawn-sh "noctalia msg panel-toggle noctalia/notes:panel"; }
+    
+    Ctrl+Shift+Alt+A hotkey-overlay-title="<u>Screenshot</u>" { spawn-sh "set -e; grim -t ppm -g \"$(slurp -o -d -F monospace)\" - | satty --filename - --copy-command=wl-copy --annotation-size-factor 1.0 --output-filename=\"~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H:%M:%S.png\" --actions-on-enter=\"save-to-clipboard,exit\" --brush-smooth-history-size=5"; }
+    Ctrl+Alt+A { spawn-sh "noctalia msg screenshot-region"; }
+    Mod+Shift+A { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    Mod+Alt+A { screenshot-window; }
+
 
     // Audio & Brightness
     XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }

@@ -3,9 +3,7 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-// I don't know why 'noctalia.kdl' will be removed after reboot
-// So use '_noctalia.kdl' instead
-include "_noctalia.kdl"
+include "noctalia-v5.kdl"
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -647,15 +645,6 @@ binds {
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
-
-    // https://github.com/YaLTeR/niri/discussions/1737
-    // This runs inside a running Niri session (not a plain terminal): slurp/grim/satty are Wayland-aware tools.
-    // set -e ensures the pipeline stops on error, avoiding partial side effects.
-    // The pipeline is interactive: satty provides a GUI step for annotation and final confirmation before saving/copying.
-    Ctrl+Shift+Alt+A hotkey-overlay-title="<u>Screenshot</u>" { spawn-sh "set -e; grim -t ppm -g \"$(slurp -o -d -F monospace)\" - | satty --filename - --copy-command=wl-copy --annotation-size-factor 1.0 --output-filename=\"~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H:%M:%S.png\" --actions-on-enter=\"save-to-clipboard,exit\" --brush-smooth-history-size=5"; }
-    Ctrl+Alt+A { screenshot; }
-    Mod+Shift+A { screenshot-screen; }
-    Mod+Alt+A { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
