@@ -1,19 +1,20 @@
-{ ... }:
-{
-  programs.ssh.enableAskPassword = false;
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+_: {
+  programs = {
+    ssh.enableAskPassword = false;
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
 
-  # vpn
-  programs.clash-verge = {
-    enable = true;
-    tunMode = true;
-    serviceMode = true;
-  };
+    # vpn
+    clash-verge = {
+      enable = true;
+      tunMode = true;
+      serviceMode = true;
+    };
 
-  # niri
-  programs.niri.enable = true;
+    # niri
+    niri.enable = true;
+  };
 }

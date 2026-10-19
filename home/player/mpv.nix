@@ -4,10 +4,5 @@
     mpv
   ];
 
-  programs.mpv = {
-    enable = true;
-    config = {
-      volume = 10;
-    };
-  };
+  programs.mpv.config.volume = 10;
 }

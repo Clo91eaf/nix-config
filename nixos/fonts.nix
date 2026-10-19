@@ -50,7 +50,10 @@ in
       serif = [ "Noto Serif CJK SC" ];
       # MiSans first: closer to the macOS (PingFang) look the user wants;
       # Noto remains as the CJK fallback for glyphs MiSans doesn't cover.
-      sansSerif = [ "MiSans" "Noto Sans CJK SC" ];
+      sansSerif = [
+        "MiSans"
+        "Noto Sans CJK SC"
+      ];
       monospace = [ "Noto Sans Mono CJK SC" ];
       emoji = [ "Noto Color Emoji" ];
     };

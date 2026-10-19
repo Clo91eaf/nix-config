@@ -14,17 +14,19 @@
 
   services.openssh.enable = true;
 
-  age.secrets.passwd.file = ../../secrets/passwd.age;
+  age.secrets = {
+    passwd.file = ../../secrets/passwd.age;
 
-  age.secrets.ssh-config = {
-    file = ../../secrets/ssh-config.age;
-    owner = "Clo91eaf";
-    mode = "0400";
-  };
+    ssh-config = {
+      file = ../../secrets/ssh-config.age;
+      owner = "Clo91eaf";
+      mode = "0400";
+    };
 
-  age.secrets.ovpn = {
-    file = ../../secrets/ovpn.age;
-    mode = "0400";
+    ovpn = {
+      file = ../../secrets/ovpn.age;
+      mode = "0400";
+    };
   };
 
   users.users.Clo91eaf = {

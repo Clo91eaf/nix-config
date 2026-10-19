@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake/pull/20/head"; #https://github.com/youwen5/zen-browser-flake/pull/20
+      url = "github:youwen5/zen-browser-flake/pull/20/head"; # https://github.com/youwen5/zen-browser-flake/pull/20
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zed-extensions = {
@@ -37,7 +37,6 @@
 
   outputs =
     inputs@{
-      self,
       nixpkgs,
       home-manager,
       agenix,
@@ -50,39 +49,47 @@
       mylib = import ./mylib/utils.nix { inherit (nixpkgs) lib; };
 
       specialArgs = {
-        inherit username hostname mylib inputs;
+        inherit
+          username
+          hostname
+          mylib
+          inputs
+          ;
       };
 
     in
     {
-      nixosConfigurations.${hostname} =
-        nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
 
-          # module organization of the configuration files
-          # nix-config
-          # +-- hosts/<hostname>   machine-specific (hardware + host settings)
-          # +-- nixos              generic system modules
-          # +-- home               home-manager modules
-          # +-- users/<username>   per-user nixos + home entrypoints
-          modules = [
-            ./hosts/${hostname}
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        system = "x86_64-linux";
 
-            ./users/${username}/nixos.nix
+        # module organization of the configuration files
+        # nix-config
+        # +-- hosts/<hostname>   machine-specific (hardware + host settings)
+        # +-- nixos              generic system modules
+        # +-- home               home-manager modules
+        # +-- users/<username>   per-user nixos + home entrypoints
+        modules = [
+          ./hosts/${hostname}
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+          ./users/${username}/nixos.nix
 
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./users/${username}/home.nix;
-            }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            agenix.nixosModules.default
-          ];
-        };
+              extraSpecialArgs = specialArgs;
+              backupFileExtension = "backup";
+              users.${username} = import ./users/${username}/home.nix;
+            };
+          }
+
+          agenix.nixosModules.default
+        ];
+      };
     };
 }

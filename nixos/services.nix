@@ -1,14 +1,14 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = [(
-    pkgs.catppuccin-sddm.override {
+  environment.systemPackages = [
+    (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";
-      font  = "Noto Sans";
+      font = "Noto Sans";
       fontSize = "21";
       loginBackground = true;
-    }
-  )];
+    })
+  ];
 
   services = {
     xserver.enable = true;

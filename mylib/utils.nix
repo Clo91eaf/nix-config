@@ -62,7 +62,7 @@
     path:
     path
     |> builtins.readDir
-    |> (lib.filterAttrs (name: type: name != "default.nix")) # filter default.nix
+    |> (lib.filterAttrs (name: _: name != "default.nix")) # filter default.nix
     |> (lib.filterAttrs (name: type: type == "directory" || lib.hasSuffix ".nix" name)) # keep dirs and .nix files
     |> builtins.attrNames
     |> map (name: path + "/${name}");
