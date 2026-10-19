@@ -28,6 +28,10 @@
       url = "github:sanweiya/fcitx5-mellow-themes";
       flake = false;
     };
+    phono-fcitx5-addon = {
+      url = "github:phono-project/phono-fcitx5-addon/v0.1.2";
+      flake = false;
+    };
     scala3-bsp-semantic-ls-zed = {
       url = "github:xinpian-tech/scala3-bsp-semantic-ls-zed";
       inputs.nixpkgs.follows = "nixpkgs";

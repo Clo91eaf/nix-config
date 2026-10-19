@@ -186,12 +186,30 @@
         "type": "github"
       }
     },
+    "phono-fcitx5-addon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792249284,
+        "narHash": "sha256-CEBlLSIkKAaj3EFB1Kj17k6u/kPHhxc1RhsrToNgEdU=",
+        "owner": "phono-project",
+        "repo": "phono-fcitx5-addon",
+        "rev": "62514a7d0af880108b217d9fe5bf3fa63dc77cd3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "phono-project",
+        "ref": "v0.1.2",
+        "repo": "phono-fcitx5-addon",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
         "fcitx5-mellow-themes": "fcitx5-mellow-themes",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "phono-fcitx5-addon": "phono-fcitx5-addon",
         "scala3-bsp-semantic-ls-zed": "scala3-bsp-semantic-ls-zed",
         "zed-extensions": "zed-extensions",
         "zed-nixpkgs": "zed-nixpkgs",
