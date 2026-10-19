@@ -35,6 +35,22 @@
         "type": "github"
       }
     },
+    "fcitx5-mellow-themes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789044775,
+        "narHash": "sha256-y7Q7BgObG99l0+8UVn24TibmUK3Xdq+/1N/G4o9eYAY=",
+        "owner": "sanweiya",
+        "repo": "fcitx5-mellow-themes",
+        "rev": "2c93b0ea3418a55c03f526d963c84a7ccde2c1e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sanweiya",
+        "repo": "fcitx5-mellow-themes",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -173,6 +189,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "fcitx5-mellow-themes": "fcitx5-mellow-themes",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "scala3-bsp-semantic-ls-zed": "scala3-bsp-semantic-ls-zed",

@@ -24,6 +24,10 @@
       url = "github:SwornSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fcitx5-mellow-themes = {
+      url = "github:sanweiya/fcitx5-mellow-themes";
+      flake = false;
+    };
     scala3-bsp-semantic-ls-zed = {
       url = "github:xinpian-tech/scala3-bsp-semantic-ls-zed";
       inputs.nixpkgs.follows = "nixpkgs";
