@@ -14,4 +14,10 @@ patch:
   switcher/hotkeys:
     - "F4"
 
+  switcher/save_options:
+    - traditionalization
+    - emoji
+    - full_shape
+    - search_single_char
+
   menu/page_size: 9
