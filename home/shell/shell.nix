@@ -35,7 +35,7 @@
 
       shellAliases = {
         ff = "fastfetch";
-        win = "sudo grub-reboot 1 && reboot";
+        win = "sudo ${pkgs.grub2}/bin/grub-reboot Windows && reboot";
         upd = "nh os switch ~/nix-config";
         ls = "eza --group-directories-first --icons=always --color=auto";
         ll = "eza --group-directories-first --icons=always --color=auto -lh";

@@ -51,7 +51,7 @@
         "reasoning_effort": "xhigh",
         "mode": "agent-full-access",
         "fast-mode": true,
-        "model": "gpt-6.1-sol"
+        "model": "gpt-6-astra"
       },
       "type": "registry"
     }
