@@ -1,4 +1,4 @@
-# ~/.local/share/fcitx5/rime/ice.custom.yaml -> rime_ice/ice.schema.yaml
+# ~/.local/share/fcitx5/rime/rime_ice.custom.yaml -> rime_ice.schema.yaml
 
 patch:
   switches:
