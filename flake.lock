@@ -189,16 +189,16 @@
     "phono-fcitx5-addon": {
       "flake": false,
       "locked": {
-        "lastModified": 1792249284,
-        "narHash": "sha256-CEBlLSIkKAaj3EFB1Kj17k6u/kPHhxc1RhsrToNgEdU=",
+        "lastModified": 1792853852,
+        "narHash": "sha256-OZfFJ/m8pngs/LNtgu+JHqJVQ1RZ6ZKIgLX8UcEoJy4=",
         "owner": "phono-project",
         "repo": "phono-fcitx5-addon",
-        "rev": "62514a7d0af880108b217d9fe5bf3fa63dc77cd3",
+        "rev": "dba0e75575824046fc38845b0323298579c35ea8",
         "type": "github"
       },
       "original": {
         "owner": "phono-project",
-        "ref": "v0.1.2",
+        "ref": "v0.1.3",
         "repo": "phono-fcitx5-addon",
         "type": "github"
       }

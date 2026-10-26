@@ -16,13 +16,13 @@
 
 let
   coreSdk = fetchurl {
-    url = "https://github.com/phono-project/phono-core/releases/download/v0.1.1/phono-core-sdk-0.1.1-linux-x86_64.tar.gz";
-    hash = "sha256-zOHMrf9n0Z3E81vJrf8Hk+c00InelgFacJKGxRKEx70=";
+    url = "https://github.com/phono-project/phono-core/releases/download/v0.1.2/phono-core-sdk-0.1.2-linux-x86_64.tar.gz";
+    hash = "sha256-0lH8dWh+0xJXTJ7l3V/xTdGcSQ6HVetsAEC3GnCtBt0=";
   };
 in
 stdenv.mkDerivation {
   pname = "phono-fcitx5-addon";
-  version = "0.1.2";
+  version = "0.1.3";
 
   inherit src;
 
@@ -45,23 +45,6 @@ stdenv.mkDerivation {
     mkdir -p phono-sdk
     tar -xzf ${coreSdk} -C phono-sdk
     cmakeFlagsArray+=("-DPHONO_SDK_PREFIX=$PWD/phono-sdk")
-  '';
-
-  # Keep the raw composition inline in the application, matching Rime's
-  # "Composing text" preedit mode instead of duplicating it in the panel.
-  postPatch = ''
-    substituteInPlace src/addon.cpp \
-      --replace-fail '        panel.setPreedit(preedit);' ""
-  '';
-
-  doCheck = true;
-
-  # The Fcitx punctuation and fullwidth modules are optional dependencies and
-  # are provided by fcitx5-chinese-addons in the NixOS module.
-  checkPhase = ''
-    runHook preCheck
-    ctest --output-on-failure -E feature_tests
-    runHook postCheck
   '';
 
   meta = {

@@ -29,7 +29,7 @@
       flake = false;
     };
     phono-fcitx5-addon = {
-      url = "github:phono-project/phono-fcitx5-addon/v0.1.2";
+      url = "github:phono-project/phono-fcitx5-addon/v0.1.3";
       flake = false;
     };
     scala3-bsp-semantic-ls-zed = {
