@@ -275,6 +275,8 @@ spawn-at-startup "zen"
 spawn-at-startup "Telegram"
 spawn-at-startup "qq"
 
+spawn-sh-at-startup "dsh web"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
