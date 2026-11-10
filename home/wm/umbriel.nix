@@ -1,13 +1,7 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 let
-  configFile = "${config.home.homeDirectory}/nix-config/config/niri";
+  configFile = "${config.home.homeDirectory}/nix-config/config/umbriel/config.toml";
 in
 {
-  home.packages = with pkgs; [
-    umbriel
-  ];
-
-  # https://nixos-and-flakes.thiscute.world/zh/best-practices/accelerating-dotfiles-debugging
-  # Symlink the external config file into the home manager config
-  xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink configFile;
+  xdg.configFile."umbriel/config.toml".source = config.lib.file.mkOutOfStoreSymlink configFile;
 }
