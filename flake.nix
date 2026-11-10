@@ -3,11 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Zed is pinned to the nixpkgs revision whose zed-editor is 1.12.0, because
-    # the patches in home/editor/ are audited against that version. Everything
-    # else keeps following `nixpkgs` (unstable). Bump this revision deliberately
-    # when you want a newer Zed (and re-audit the patches).
-    zed-nixpkgs.url = "github:NixOS/nixpkgs/0954f7ee2f6bb3dc7d4e3d0d8bcb8fd4bde4cfc5";
+    # https://yet.nixoscn.org/
+    nixpkgs-yet.url = "github:NixOS/nixpkgs/1d060086d60cb76a40cf37109f979d88a5bd6396";
+    # https://github.com/llvm/circt/issues/11509
+    clash-verge-nixpkgs.url = "github:NixOS/nixpkgs/02a1ce73fa5f0021971b47e5d916066f2450b56d";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,22 +19,17 @@
       url = "github:youwen5/zen-browser-flake/pull/20/head"; # https://github.com/youwen5/zen-browser-flake/pull/20
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zed-extensions = {
-      url = "github:SwornSystems/nix-zed-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     fcitx5-mellow-themes = {
       url = "github:sanweiya/fcitx5-mellow-themes";
       flake = false;
     };
     phono-fcitx5-addon = {
-      url = "github:phono-project/phono-fcitx5-addon/v0.1.3";
+      url = "github:phono-project/phono-fcitx5-addon/main";
       flake = false;
     };
     scala3-bsp-semantic-ls-zed = {
       url = "github:xinpian-tech/scala3-bsp-semantic-ls-zed";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.zed-extensions.follows = "zed-extensions";
     };
   };
 
