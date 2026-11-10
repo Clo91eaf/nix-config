@@ -24,7 +24,13 @@ files = []
 # https://docs.noctalia.dev/umbriel/configuration/#general
 #
 [general]
-autostart = ["noctalia", "kitty"]
+autostart = [
+  "noctalia",
+  "zen",
+  "Telegram",
+  "qq",
+  "dsh web --no-open",
+]
 mod_key = "Super"
 # xwayland = false
 # Sharp X11 apps and games on scaled outputs; they see physical resolutions.
@@ -67,9 +73,10 @@ mod_key = "Super"
 # https://docs.noctalia.dev/umbriel/outputs/
 #
 [output.HDMI-A-1]
-mode = "2560x1440@60.405"
-# position = [0, 0]
+mode = "2560x1440@74.999"
+position = [1280, 0]
 scale = 1.5
+transform = "normal"
 vrr = "fullscreen"
 hdr = "auto"
 # sdr_transfer = "gamma22" # Or "srgb" for piecewise SDR decoding in HDR.
@@ -81,6 +88,9 @@ hdr = "auto"
 #
 [appearance.blur]
 radius = 3
+passes = 3
+noise = 0.02
+saturation = 1.5
 
 # Optional title bar with modifier-free dragging and floating frame resizing.
 # [appearance.title_bar]
@@ -159,12 +169,21 @@ radius = 3
 # [input]
 #
 [input.keyboard]
+layout = "us"
 numlock_toggle = true
+repeat_delay = 300
+repeat_rate = 25
+
+[input.touchpad]
+tap = true
+natural_scroll = true
+sensitivity = 0.2
 
 # Focus can follow the pointer across tiled, floating, and pinned windows.
 #
-# [input.focus]
-# follows_mouse = true
+[input.focus]
+follows_mouse = true
+follows_mouse_max_scroll = 0.0
 # hover_raises = false # Hover focuses only; clicks and keybinds raise.
 
 # Confine touch input to one display.
@@ -182,11 +201,25 @@ numlock_toggle = true
 [keybinds]
 
 # Applications and session
-"Mod+Space" = "spawn noctalia msg panel-toggle launcher"
+"Mod+Shift+Slash" = { action = "cheatsheet-toggle", repeat = false }
+"Mod+O" = { action = "overview-toggle", repeat = false }
+"Mod+E" = { action = "spawn zen", repeat = false }
+"Mod+P" = "spawn zeditor ~/nix-config"
 "Mod+T" = { action = "spawn kitty", repeat = false }
 "Mod+Q" = { action = "window-close", repeat = false }
-"Mod+Escape" = "session-quit"
-"Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+"Mod+Return" = { action = "spawn kitty", repeat = false }
+"Mod+W" = { action = "spawn kitty --class float", repeat = false }
+"Mod+Y" = { action = "spawn kitty --class yazi yazi ~", repeat = false }
+
+# Noctalia
+"Mod+S" = "spawn noctalia msg panel-toggle control-center"
+"Mod+Space" = "spawn noctalia msg panel-toggle launcher"
+"Mod+Shift+N" = "spawn noctalia msg panel-toggle noctalia/notes:panel"
+
+# Screenshots
+"Ctrl+Alt+A" = "spawn noctalia msg screenshot-region"
+"Mod+Shift+A" = "spawn noctalia msg screenshot-fullscreen"
+"Mod+Alt+A" = "spawn noctalia msg screenshot-window"
 
 # Media, volume and brightness keys from any input device, routed through the
 # Noctalia shell so its OSDs show. Safe while the session is locked.
@@ -202,44 +235,75 @@ numlock_toggle = true
 
 # Focus and movement
 "Mod+Left" = "window-focus-left"
-"Mod+Down" = "window-focus-down"
-"Mod+Up" = "window-focus-up"
+"Mod+Down" = "window-focus-or-workspace-down"
+"Mod+Up" = "window-focus-or-workspace-up"
 "Mod+Right" = "window-focus-right"
 "Mod+H" = "window-focus-left"
-"Mod+J" = "window-focus-down"
-"Mod+K" = "window-focus-up"
+"Mod+J" = "window-focus-or-workspace-down"
+"Mod+K" = "window-focus-or-workspace-up"
 "Mod+L" = "window-focus-right"
 "Mod+F1" = "window-focus-next"
-"Mod+Shift+Left" = "column-move-left"
-"Mod+Shift+Down" = "window-move-down"
-"Mod+Shift+Up" = "window-move-up"
-"Mod+Shift+Right" = "column-move-right"
+"Mod+Ctrl+Left" = "column-move-left"
+"Mod+Ctrl+Right" = "column-move-right"
+"Mod+Ctrl+Down" = "window-move-or-workspace-down"
+"Mod+Ctrl+Up" = "window-move-or-workspace-up"
+"Mod+Ctrl+H" = "column-move-left"
+"Mod+Ctrl+L" = "column-move-right"
+"Mod+Ctrl+J" = "window-move-or-workspace-down"
+"Mod+Ctrl+K" = "window-move-or-workspace-up"
+
+# Outputs and workspaces
+"Mod+Shift+Left" = "output-focus-left"
+"Mod+Shift+Right" = "output-focus-right"
+"Mod+Shift+Down" = "output-focus-down"
+"Mod+Shift+Up" = "output-focus-up"
+"Mod+Shift+H" = "output-focus-left"
+"Mod+Shift+L" = "output-focus-right"
+"Mod+Shift+J" = "output-focus-down"
+"Mod+Shift+K" = "output-focus-up"
+"Mod+Shift+Ctrl+Down" = "workspace-move-down"
+"Mod+Shift+Ctrl+Up" = "workspace-move-up"
+"Mod+Shift+Ctrl+J" = "workspace-move-down"
+"Mod+Shift+Ctrl+K" = "workspace-move-up"
+
+# Mouse wheel
+"Mod+WheelDown" = { action = "workspace-next", cooldown_ms = 150 }
+"Mod+WheelUp" = { action = "workspace-previous", cooldown_ms = 150 }
+"Mod+Ctrl+WheelDown" = { action = "column-move-to-workspace-next", cooldown_ms = 150 }
+"Mod+Ctrl+WheelUp" = { action = "column-move-to-workspace-previous", cooldown_ms = 150 }
+"Mod+WheelRight" = "window-focus-right"
+"Mod+WheelLeft" = "window-focus-left"
+"Mod+Ctrl+WheelRight" = "column-move-right"
+"Mod+Ctrl+WheelLeft" = "column-move-left"
+"Mod+Shift+WheelDown" = "window-focus-right"
+"Mod+Shift+WheelUp" = "window-focus-left"
+"Mod+Ctrl+Shift+WheelDown" = "column-move-right"
+"Mod+Ctrl+Shift+WheelUp" = "column-move-left"
 
 # Window state and layout
 "Mod+V" = { action = "window-toggle-floating", repeat = false }
+"Mod+Shift+V" = { action = "window-focus-switch-floating", repeat = false }
 "Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
-"Mod+P" = { action = "window-toggle-pinned", repeat = false }
 "Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
-"Mod+Ctrl+F" = { action = "window-toggle-fullscreen", repeat = false }
-"Mod+R" = { action = "window-toggle-maximize", repeat = false }
-"Mod+F" = "window-cycle-primary-extent"
-"Mod+Shift+R" = "window-cycle-primary-extent-back"
-"Mod+Minus" = "window-modify-primary-extent -0.02"
-"Mod+Equal" = "window-modify-primary-extent +0.02"
-"Mod+Ctrl+Minus" = "window-modify-secondary-extent -0.02"
-"Mod+Ctrl+Equal" = "window-modify-secondary-extent +0.02"
-"Mod+Comma" = "window-consume-left"
-"Mod+Period" = "window-consume-right"
-"Mod+Ctrl+Comma" = "window-consume-from-left"
-"Mod+Ctrl+Period" = "window-consume-from-right"
+"Mod+R" = "window-cycle-primary-extent"
+"Mod+Shift+R" = "window-cycle-secondary-extent"
+"Mod+F" = "window-toggle-maximize"
+"Mod+Shift+F" = "window-toggle-fullscreen"
+"Mod+Ctrl+F" = "window-toggle-maximize-to-edges"
+"Mod+C" = "column-center"
+"Mod+Ctrl+C" = "column-center"
+"Mod+Minus" = "window-modify-primary-extent -0.1"
+"Mod+Equal" = "window-modify-primary-extent 0.1"
+"Mod+Shift+Minus" = "window-modify-secondary-extent -0.1"
+"Mod+Shift+Equal" = "window-modify-secondary-extent 0.1"
+"Mod+BracketLeft" = "window-consume-or-expel-left"
+"Mod+BracketRight" = "window-consume-or-expel-right"
+"Mod+Comma" = "window-consume-from-right"
+"Mod+Period" = "window-consume-or-expel-right"
 # Needs layout.mode = "dwindle".
 # "Mod+Alt+T" = "layout-toggle-split"
-"Mod+W" = { action = "column-toggle-tabbed", repeat = false }
 "Mod+Alt+Right" = "column-focus-tab-next"
 "Mod+Alt+Left" = "column-focus-tab-previous"
-"Mod+WheelUp" = "window-focus-left"
-"Mod+WheelDown" = "window-focus-right"
-"Mod+O" = { action = "overview-toggle", repeat = false }
 
 # Workspaces
 # Move the whole workspace, retaining its name, layout, and windows.
@@ -264,12 +328,30 @@ numlock_toggle = true
 "Mod+Shift+7" = "window-move-to-workspace 7"
 "Mod+Shift+8" = "window-move-to-workspace 8"
 "Mod+Shift+9" = "window-move-to-workspace 9"
+"Mod+Ctrl+1" = "column-move-to-workspace 1"
+"Mod+Ctrl+2" = "column-move-to-workspace 2"
+"Mod+Ctrl+3" = "column-move-to-workspace 3"
+"Mod+Ctrl+4" = "column-move-to-workspace 4"
+"Mod+Ctrl+5" = "column-move-to-workspace 5"
+"Mod+Ctrl+6" = "column-move-to-workspace 6"
+"Mod+Ctrl+7" = "column-move-to-workspace 7"
+"Mod+Ctrl+8" = "column-move-to-workspace 8"
+"Mod+Ctrl+9" = "column-move-to-workspace 9"
 
 # Scratchpad
 "Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
-# "Mod+Space" = "scratchpad-toggle"
 "Mod+Ctrl+Space" = { action = "window-restore-from-scratchpad", repeat = false }
 "Mod+Tab" = "scratchpad-focus-next"
+
+# Compositor and media shortcuts
+"Mod+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+"Mod+Shift+Escape" = { action = "session-quit", repeat = false }
+"Mod+Shift+P" = { action = "dpms-off", repeat = false }
+"Ctrl+Alt+Shift+P" = "spawn playerctl play-pause"
+"Ctrl+Alt+Shift+N" = "spawn playerctl next"
+"Ctrl+Alt+Shift+B" = "spawn playerctl previous"
+"Ctrl+Alt+Shift+S" = "spawn swayimg -o mtime ~/Pictures/Screenshots/"
+"Ctrl+Alt+Shift+V" = "spawn sh -c 'wl-paste --type image/png | swayimg -'"
 
 # ==============================================================================
 # Layout
@@ -278,8 +360,10 @@ numlock_toggle = true
 # their most recently focused row when focus leaves and later returns.
 # https://docs.noctalia.dev/umbriel/layout/
 [layout]
-# mode = "scrolling" # "scrolling", "dwindle", "master", or "stacking".
-extent_presets = [0.5]
+# "scrolling", "dwindle", "master", or "stacking".
+mode = "scrolling" 
+gap = 10
+extent_presets = [0.5, 1.0]
 
 # What a tiled window's own maximize button does: "column" fills the column,
 # "edges" fills the usable area without struts, gaps, or borders. The
@@ -291,6 +375,7 @@ extent_presets = [0.5]
 
 [layout.scrolling]
 default_extent_fraction = 0.5
+center_focused = "never"
 # Center the window picked in the overview, as column-center would.
 # center_on_overview_select = true
 
@@ -324,13 +409,59 @@ default_extent_fraction = 0.5
 # moves anything behind them.
 [[window_rule]]
 blur = true
-allow_shortcuts_inhibit = false
+allow_shortcuts_inhibit = true
 default_maximize = true
+corner_radius = 10
+shadow = false
+border_width = 4
+border_color_focused = "#80c8ff"
+border_color_unfocused = "#505050"
+
+[[window_rule]]
+match.app_id = ["swayimg", "satty", "mpv"]
+default_floating = true
+default_fullscreen = false
+default_floating_size_px = { width = 1200, height = 800 }
+
+[[window_rule]]
+match.title = ["图片查看器", "视频播放器", "聊天记录"]
+default_floating = true
+default_fullscreen = false
+default_floating_size_px = { width = 1200, height = 800 }
+
+[[window_rule]]
+match.app_id = "^org.telegram.desktop$"
+match.title = "^Media viewer$"
+default_floating = true
+default_fullscreen = false
+default_floating_size_px = { width = 800, height = 600 }
+
+[[window_rule]]
+match.app_id = "^float$"
+default_floating = true
+default_floating_size_px = { width = 1200, height = 800 }
+
+[[window_rule]]
+match.app_id = "^org.gnome.Nautilus$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 600 }
+
+[[window_rule]]
+match.app_id = ["^kitty$", "^dev.zed.Zed$"]
+default_maximize = true
+blur = true
+
+[[window_rule]]
+match.title = "^SPlayer - 桌面歌词$"
+default_floating = true
+default_focused = false
+default_position = { x = 500, y = 0, anchor = "top_left" }
+border_width = 0
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
-default_floating_size_px = { width = 1020, height = 900 }
+default_floating_size_px = { width = 1080, height = 920 }
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
@@ -439,6 +570,10 @@ blur_popups = true
 [[layer_rule]]
 match.namespace = "^noctalia-(notification|dock|panel|attached-panel|osd)$"
 blur_optimized = false
+
+[[layer_rule]]
+match.namespace = "^noctalia-window-switcher$"
+blur = true
 
 # ==============================================================================
 # Overview
