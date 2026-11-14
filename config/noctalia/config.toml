@@ -1,11 +1,11 @@
 [bar.default]
 background_opacity = 0.19999999552965164
 center = [ "taskbar" ]
-end = [ "tray", "notifications", "clipboard", "volume", "clock", "session" ]
+end = [ "tray", "keyboard_layout", "notifications", "clipboard", "volume", "clock", "session" ]
 margin_ends = 0
 radius_top_left = 0
 radius_top_right = 0
-start = [ "control-center", "network", "network_tx", "network_rx", "cpu", "ram", "media" ]
+start = [ "control-center", "network", "network_tx", "network_rx", "cpu", "ram", "media_lyrics" ]
 thickness = 30
 
 [lockscreen_widgets]
@@ -44,6 +44,10 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
 avatar_path = "/home/Clo91eaf/Pictures/Avatar/.face"
 settings_show_advanced = false
 telemetry_enabled = true
+
+    [shell.keyboard_layout.custom_labels]
+    "Phono - Pinyin Input" = "phono"
+    "Pinyin" = "phono"
 
     [shell.screenshot]
     directory = "/home/Clo91eaf/Pictures/Screenshots"
@@ -103,6 +107,18 @@ enabled = true
 [widget.taskbar]
 group_by_workspace = true
 group_single_icon_per_app = true
+
+[widget.media_lyrics]
+type = "tranzem/media-lyrics:now-playing"
+show_lyric_line = true
+title_scroll = "on_hover"
+hide_when_no_media = true
+
+[widget.keyboard_layout]
+display = "short"
+hide_when_single_layout = true
+show_glyph = true
+show_label = true
 
 [widget.workspaces]
 active_pill_size = 1.6500000000000001

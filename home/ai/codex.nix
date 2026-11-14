@@ -1,9 +1,6 @@
-{ inputs, pkgs, ... }:
-let
-  _pkgs = inputs.nixpkgs-yet.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
+{ pkgs, ... }:
 {
-  home.packages = [
-    _pkgs.codex
+  home.packages = with pkgs; [
+    codex
   ];
 }
