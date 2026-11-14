@@ -455,7 +455,9 @@ binds {
     Mod+E hotkey-overlay-title="Spawn <u>Zen Browser</u>" repeat=false { spawn "zen"; }
     Mod+P hotkey-overlay-title="Spawn <u>Config</u>" { spawn-sh "zeditor ~/nix-config"; }
     Mod+Q hotkey-overlay-title="Close Window" repeat=false { close-window; }
-    Mod+T hotkey-overlay-title="Spawn <u>Kitty</u>" { spawn "kitty"; }
+    Mod+T hotkey-overlay-title="Open <u>Kitty Tab</u>" {
+        spawn-sh "socket=/run/user/$(id -u)/kitty.sock; if kitten @ --to unix:$socket ls >/dev/null 2>&1; then kitten @ --to unix:$socket launch --type=tab; else kitty --listen-on unix:$socket; fi";
+    }
     Mod+W hotkey-overlay-title="Spawn <u>Kitty Float</u>" { spawn "kitty" "--class" "float"; }
     Mod+Y hotkey-overlay-title="Spawn <u>Yazi</u>" repeat=false { spawn "kitty" "--class" "yazi" "yazi" "~"; }
 
