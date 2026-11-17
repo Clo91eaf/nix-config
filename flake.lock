@@ -150,6 +150,26 @@
         "type": "github"
       }
     },
+    "luciole": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794881283,
+        "narHash": "sha256-cb/s0KEtOy8gmhEgFOaMi3lWlQh8FQUB0t6fZfpcLOk=",
+        "owner": "noctalia-dev",
+        "repo": "luciole",
+        "rev": "ddc512c2cb33537962c43e05aab5a2a1829139e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "luciole",
+        "type": "github"
+      }
+    },
     "mill-ivy-fetcher": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -241,6 +261,7 @@
         "clash-verge-nixpkgs": "clash-verge-nixpkgs",
         "fcitx5-mellow-themes": "fcitx5-mellow-themes",
         "home-manager": "home-manager",
+        "luciole": "luciole",
         "nixpkgs": "nixpkgs",
         "nixpkgs-yet": "nixpkgs-yet",
         "phono-fcitx5-addon": "phono-fcitx5-addon",

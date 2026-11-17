@@ -325,7 +325,6 @@ window-rule {
 
 // Open as floating by default.
 window-rule {
-    match app-id="swayimg"
     match app-id="satty"
     // qq picture viewer
     match title="图片查看器"
@@ -361,15 +360,6 @@ window-rule {
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }
-}
-
-// nautilus window rule
-window-rule {
-    match app-id="org.gnome.Nautilus"
-
-    open-floating true
-    default-column-width { fixed 800; }
-    default-window-height { fixed 600; }
 }
 
 // kitty + zed window rule
@@ -606,7 +596,7 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
+    Mod+F { spawn-sh "luciole '~/Downloads'"; }
     Mod+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
@@ -670,6 +660,4 @@ binds {
     Ctrl+Alt+Shift+P hotkey-overlay-title="Spawn <u>Splayer</u> <b>Play/Pause</b>" { spawn "playerctl" "play-pause"; }
     Ctrl+Alt+Shift+N hotkey-overlay-title="Spawn <u>Splayer</u> <b>Next</b>" { spawn "playerctl" "next"; }
     Ctrl+Alt+Shift+B hotkey-overlay-title="Spawn <u>Splayer</u> <b>Previous</b>" { spawn "playerctl" "previous"; }
-    Ctrl+Alt+Shift+S hotkey-overlay-title="Spawn <u>Swayimg</u> <b>Screenshots</b>" { spawn-sh "swayimg -o mtime ~/Pictures/Screenshots/"; }
-    Ctrl+Alt+Shift+V hotkey-overlay-title="Spawn <u>Swayimg</u> <b>Clipboard</b>" { spawn-sh "wl-paste --type image/png | swayimg -"; }
 }
